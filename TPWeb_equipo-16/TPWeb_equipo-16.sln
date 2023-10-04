@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33920.266
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CartWeb", "CartWeb\CartWeb.csproj", "{F9471858-DD6E-4B8A-AC72-39AF03DD9522}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{8D0BACAD-8A0A-4283-A81A-324A34DBD06A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Managers", "Managers\Managers.csproj", "{8B808C0C-7C67-4E76-B44B-2B67536F8557}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9471858-DD6E-4B8A-AC72-39AF03DD9522}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9471858-DD6E-4B8A-AC72-39AF03DD9522}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9471858-DD6E-4B8A-AC72-39AF03DD9522}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9471858-DD6E-4B8A-AC72-39AF03DD9522}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D0BACAD-8A0A-4283-A81A-324A34DBD06A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D0BACAD-8A0A-4283-A81A-324A34DBD06A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D0BACAD-8A0A-4283-A81A-324A34DBD06A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D0BACAD-8A0A-4283-A81A-324A34DBD06A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B808C0C-7C67-4E76-B44B-2B67536F8557}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B808C0C-7C67-4E76-B44B-2B67536F8557}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B808C0C-7C67-4E76-B44B-2B67536F8557}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B808C0C-7C67-4E76-B44B-2B67536F8557}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {20C3269C-B4CE-428F-BE3D-168AFCE3004A}
+	EndGlobalSection
+EndGlobal
