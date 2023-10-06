@@ -23,6 +23,7 @@ namespace Managers
             conection = new SqlConnection();
             command = new SqlCommand();
             conection.ConnectionString = "server=.\\SQLEXPRESS;database=CATALOGO_P3_DB;integrated security = true;";
+
         }
         
 
@@ -30,8 +31,15 @@ namespace Managers
         {
             command.CommandType = System.Data.CommandType.Text;
             command.CommandText = consulta;
-            command.Connection = conection;
 
+
+        }
+
+        public void setProcedure(string sp)
+        {
+            command.CommandType = System.Data.CommandType.StoredProcedure;
+            command.CommandText = sp;
+     
         }
 
         public void executeRead()

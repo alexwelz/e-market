@@ -20,6 +20,8 @@ namespace Managers
             try
             {
                 DataManager dataManager = new DataManager();
+                UrlImageManager uManager = new UrlImageManager();
+     
 
                 dataManager.setQuery(query);
                 dataManager.executeRead();
@@ -45,6 +47,9 @@ namespace Managers
 
                     article.Price = (decimal)dataManager.Lector["Precio"];
                     article.Price = Math.Round(article.Price, 2);
+                    article.Images= uManager.imagesOfItems(article.Id);
+                    
+
                     articles.Add(article);
                 }
 
@@ -58,14 +63,70 @@ namespace Managers
 
 
         }
+
+
         public List<Item> FiltbyName(string palabra)
         {
             return uploadArticlesList("select A.Id As Id,A.Codigo As Codigo,A.Nombre As Nombre ,A.Descripcion As Descripcion ,M.Descripcion Marca, M.Id Marca,C.Descripcion As Categoria, C.Id Categoria ,A.Precio  As Precio FROM  ARTICULOS A left JOIN  MARCAS M on M.Id= A.IdMarca left JOIN CATEGORIAS C on C.Id= A.IdCategoria  WHERE A.Nombre LIKE '%" + palabra + "%'");
         }
         public List<Item> Listacompleta()
         {
-            return uploadArticlesList("select A.Id As Id, A.Codigo As Codigo,A.Nombre As Nombre ,A.Descripcion As Descripcion ,M.Descripcion Marca,C.Descripcion As Categoria, C.Id As IdCategoria, M.Id As IdMarca ,A.Precio  As Precio FROM  ARTICULOS A left JOIN  MARCAS M on M.Id= A.IdMarca left JOIN CATEGORIAS C on C.Id= A.IdCategoria");
+            return  uploadArticlesList("select A.Id As Id, A.Codigo As Codigo,A.Nombre As Nombre ,A.Descripcion As Descripcion ,M.Descripcion Marca,C.Descripcion As Categoria, C.Id As IdCategoria, M.Id As IdMarca ,A.Precio  As Precio FROM  ARTICULOS A left JOIN  MARCAS M on M.Id= A.IdMarca left JOIN CATEGORIAS C on C.Id= A.IdCategoria");
+         
         }
+
+        public List<Item> spListar()
+        {
+            List<Item> articles = new List<Item>();
+            try
+            {
+                DataManager dataManager = new DataManager();
+                UrlImageManager uManager = new UrlImageManager();
+
+
+                dataManager.setProcedure("storedList");
+                dataManager.executeRead();
+                while (dataManager.Lector.Read())
+                {
+                    Item article = new Item();
+                    article.Id = (int)dataManager.Lector["Id"];
+                    article.Name = (string)dataManager.Lector["Nombre"];
+                    article.Description = (string)dataManager.Lector["Descripcion"];
+                    article.ItemCode = (string)dataManager.Lector["Codigo"];
+                    article.Brand.Descripcion = (string)dataManager.Lector["Marca"];
+                    article.Brand.Id = (int)dataManager.Lector["IdMarca"];
+
+                    if (dataManager.Lector.IsDBNull(dataManager.Lector.GetOrdinal("Categoria")))
+                    {
+                        article.Category.Descripcion = " ";
+                    }
+                    else
+                    {
+                        article.Category.Descripcion = (string)dataManager.Lector["Categoria"];
+                        article.Category.Id = (int)dataManager.Lector["IdCategoria"];
+                    }
+
+                    article.Price = (decimal)dataManager.Lector["Precio"];
+                    article.Price = Math.Round(article.Price, 2);
+                    article.Images = uManager.imagesOfItems(article.Id);
+
+
+                    articles.Add(article);
+                }
+
+                return articles;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
+
+
+
 
         public int findId(Item item)
         {
