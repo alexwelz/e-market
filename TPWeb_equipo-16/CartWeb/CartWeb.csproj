@@ -67,7 +67,7 @@
     <Content Include="detail.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
-    <Content Include="Main.aspx" />
+    <Content Include="Default.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="detail.aspx.cs">
@@ -88,12 +88,12 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="Main.aspx.cs">
-      <DependentUpon>Main.aspx</DependentUpon>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Main.aspx.designer.cs">
-      <DependentUpon>Main.aspx</DependentUpon>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
