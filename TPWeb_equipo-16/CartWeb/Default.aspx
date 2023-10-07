@@ -6,9 +6,9 @@
 
 
 
-    <div class="container-fluid" style="margin: 0; padding: 0; height: 100%; width: 100%;">
+    <div class="container-fluid" style="margin: 0; padding: 0; ">
 
-        <div class="row" style="height: 100%;width:100%">
+        <div class="row">
 
 
             <div class="col-md-3" id="FilterPlace" style="margin: 0; padding: 0;background-color:grey;">
@@ -28,15 +28,15 @@
                 </div>
 
 
-                <div class="row row-cols-1 row-cols-md-4 g-4" style="height: 100%; width: 100%;">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
                     <% 
                         foreach (Domain.Item item in itemList)
                         {
                     %>
-                    <div class="col">
+                    <div class="col-12 col-md-6 col-lg-4" style="margin-bottom:20px;">
                         <div class="card">
                             <a href="<%: ResolveUrl("~/Detail.aspx?id=" + item.Id) %>">
-                                <img src="<%: item.Images[0] %>" class="card-img-top" alt="...">
+                                <img src="<%: item.Images[0] %>" class="card-img-top" style="max-height: 250px; width: 100%;" alt="...">
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title"><%: item.Name %></h5>
