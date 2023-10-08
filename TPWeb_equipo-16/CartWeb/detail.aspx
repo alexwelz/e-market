@@ -31,4 +31,14 @@
   </button>
 </div>
 
+
+
+<asp:Label ID="lblName" runat="server" Text=""></asp:Label>
+<asp:Label ID="lblDescription" runat="server" Text=""></asp:Label>
+<asp:Label ID="lblPrice" runat="server" Text=""></asp:Label>
+
+
+
+
+
 </asp:Content>

@@ -216,3 +216,23 @@ C:\Users\Daniel\Documents\GitHub\CarritoDeCompras\TPWeb_equipo-16\CartWeb\obj\De
 C:\Users\Daniel\Documents\GitHub\CarritoDeCompras\TPWeb_equipo-16\CartWeb\obj\Debug\CartWeb.csproj.CopyComplete
 C:\Users\Daniel\Documents\GitHub\CarritoDeCompras\TPWeb_equipo-16\CartWeb\obj\Debug\CartWeb.dll
 C:\Users\Daniel\Documents\GitHub\CarritoDeCompras\TPWeb_equipo-16\CartWeb\obj\Debug\CartWeb.pdb
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Scripts\bootstrap.bundle.js
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Scripts\bootstrap.bundle.min.js
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Scripts\bootstrap.esm.js
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Scripts\bootstrap.esm.min.js
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Scripts\bootstrap.js
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Scripts\bootstrap.min.js
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Scripts\bootstrap.bundle.js.map
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Scripts\bootstrap.bundle.min.js.map
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Scripts\bootstrap.esm.js.map
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Scripts\bootstrap.esm.min.js.map
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Scripts\bootstrap.js.map
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Scripts\bootstrap.min.js.map
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Antlr3.Runtime.dll
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Microsoft.Web.Infrastructure.dll
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Newtonsoft.Json.dll
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\System.Web.Optimization.dll
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\WebGrease.dll
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Antlr3.Runtime.pdb
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Newtonsoft.Json.xml
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\System.Web.Optimization.xml
