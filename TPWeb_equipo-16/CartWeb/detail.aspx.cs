@@ -13,7 +13,7 @@ namespace CartWeb
     {
 
         public List<Item> itemList { get; set; }
-        public int item { get; set; }
+        public Item item { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             ItemManager iManager = new ItemManager();
@@ -26,13 +26,13 @@ namespace CartWeb
 
                 if (itemId != -1)
                 {
-                    Domain.Item item = itemList.FirstOrDefault(i => i.Id == itemId);
+                    item = itemList.FirstOrDefault(i => i.Id == itemId);
 
                     if (item != null)
                     {
-                        lblName.Text = item.Name;
-                        lblDescription.Text = item.Description;
-                        lblPrice.Text = "$" + item.Price.ToString();
+                        //lblName.Text = item.Name;
+                        //lblDescription.Text = item.Description;
+                        //lblPrice.Text = "$" + item.Price.ToString();
 
                     }
                     else
