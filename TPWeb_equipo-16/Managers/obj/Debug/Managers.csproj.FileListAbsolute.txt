@@ -20,8 +20,8 @@ C:\Users\Daniel\Documents\GitHub\CarritoDeCompras\TPWeb_equipo-16\Managers\bin\D
 C:\Users\Daniel\Documents\GitHub\CarritoDeCompras\TPWeb_equipo-16\Managers\bin\Debug\Managers.pdb
 C:\Users\Daniel\Documents\GitHub\CarritoDeCompras\TPWeb_equipo-16\Managers\bin\Debug\Domain.dll
 C:\Users\Daniel\Documents\GitHub\CarritoDeCompras\TPWeb_equipo-16\Managers\bin\Debug\Domain.pdb
+C:\Users\Daniel\Documents\GitHub\CarritoDeCompras\TPWeb_equipo-16\Managers\obj\Debug\Managers.csproj.AssemblyReference.cache
 C:\Users\Daniel\Documents\GitHub\CarritoDeCompras\TPWeb_equipo-16\Managers\obj\Debug\Managers.csproj.CoreCompileInputs.cache
 C:\Users\Daniel\Documents\GitHub\CarritoDeCompras\TPWeb_equipo-16\Managers\obj\Debug\Managers.csproj.CopyComplete
 C:\Users\Daniel\Documents\GitHub\CarritoDeCompras\TPWeb_equipo-16\Managers\obj\Debug\Managers.dll
 C:\Users\Daniel\Documents\GitHub\CarritoDeCompras\TPWeb_equipo-16\Managers\obj\Debug\Managers.pdb
-C:\Users\Daniel\Documents\GitHub\CarritoDeCompras\TPWeb_equipo-16\Managers\obj\Debug\Managers.csproj.AssemblyReference.cache

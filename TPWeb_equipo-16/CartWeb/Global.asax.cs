@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
+using System.Web.Optimization;
+
 
 namespace CartWeb
 {
@@ -11,6 +13,9 @@ namespace CartWeb
     {
         protected void Application_Start(object sender, EventArgs e)
         {
+      
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
     }
 }
