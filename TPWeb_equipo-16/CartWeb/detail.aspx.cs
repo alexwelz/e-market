@@ -30,9 +30,9 @@ namespace CartWeb
 
                     if (item != null)
                     {
-                        //lblName.Text = item.Name;
-                        //lblDescription.Text = item.Description;
-                        //lblPrice.Text = "$" + item.Price.ToString();
+                        lblName.Text = item.Name;
+                        lblDescription.Text = item.Description;
+                        lblPrice.Text = "$" + item.Price.ToString();
 
                     }
                     else
