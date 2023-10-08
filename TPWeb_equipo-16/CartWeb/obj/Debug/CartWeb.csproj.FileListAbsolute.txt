@@ -236,3 +236,23 @@ C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\CartWeb
 C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Antlr3.Runtime.pdb
 C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Newtonsoft.Json.xml
 C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\System.Web.Optimization.xml
+C:\Users\Aleja\source\repos\WindowsFormsApp2\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Scripts\bootstrap.bundle.js
+C:\Users\Aleja\source\repos\WindowsFormsApp2\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Scripts\bootstrap.bundle.min.js
+C:\Users\Aleja\source\repos\WindowsFormsApp2\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Scripts\bootstrap.esm.js
+C:\Users\Aleja\source\repos\WindowsFormsApp2\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Scripts\bootstrap.esm.min.js
+C:\Users\Aleja\source\repos\WindowsFormsApp2\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Scripts\bootstrap.js
+C:\Users\Aleja\source\repos\WindowsFormsApp2\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Scripts\bootstrap.min.js
+C:\Users\Aleja\source\repos\WindowsFormsApp2\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Scripts\bootstrap.bundle.js.map
+C:\Users\Aleja\source\repos\WindowsFormsApp2\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Scripts\bootstrap.bundle.min.js.map
+C:\Users\Aleja\source\repos\WindowsFormsApp2\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Scripts\bootstrap.esm.js.map
+C:\Users\Aleja\source\repos\WindowsFormsApp2\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Scripts\bootstrap.esm.min.js.map
+C:\Users\Aleja\source\repos\WindowsFormsApp2\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Scripts\bootstrap.js.map
+C:\Users\Aleja\source\repos\WindowsFormsApp2\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Scripts\bootstrap.min.js.map
+C:\Users\Aleja\source\repos\WindowsFormsApp2\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Antlr3.Runtime.dll
+C:\Users\Aleja\source\repos\WindowsFormsApp2\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Aleja\source\repos\WindowsFormsApp2\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Newtonsoft.Json.dll
+C:\Users\Aleja\source\repos\WindowsFormsApp2\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\System.Web.Optimization.dll
+C:\Users\Aleja\source\repos\WindowsFormsApp2\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\WebGrease.dll
+C:\Users\Aleja\source\repos\WindowsFormsApp2\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Antlr3.Runtime.pdb
+C:\Users\Aleja\source\repos\WindowsFormsApp2\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\Newtonsoft.Json.xml
+C:\Users\Aleja\source\repos\WindowsFormsApp2\CarritoDeCompras\TPWeb_equipo-16\CartWeb\bin\System.Web.Optimization.xml
