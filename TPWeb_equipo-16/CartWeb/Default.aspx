@@ -76,7 +76,7 @@
                                 <p class="card-text"><%: item.Description %></p>
                                 <p class="card-text">$ <%: item.Price %></p>
                                 <div class="btn-group" role="group">
-                                    <a href="#" class="btn btn-primary" onclick="Addtocart(<%: item.Id %>); return false;">Add to cart</a>
+                                     <a href="#" class="btn btn-primary" onclick="Addtocart(<%: item.Id %>); return false;" style="background-color: green; color: white;">Add to cart</a>
                                     <a href="<%: ResolveUrl("~/Detail.aspx?id=" + item.Id) %>" class="btn btn-secondary">+</a>
                                 </div>
                             </div>

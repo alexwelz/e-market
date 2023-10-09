@@ -19,7 +19,7 @@
                         <div class="carousel-inner">
                             <%
                                 bool first = true;
-                                for (int i = 0; i < 3; i++)
+                                for (int i = 0; i < item.Images.Count(); i++)
                                 {
                                     if (first)
                                     {
@@ -49,17 +49,31 @@
                     </div>
                 </div>
                 <div class="col-md-4" id="descriptionPlace" style="background-color: white;">
-                    <div id="DatosdelItem" style="height: 50%;">
-                        <br />
-                        <asp:Label ID="lblName" runat="server" Text=""></asp:Label>
-                        <asp:Label ID="lblDescription" runat="server" Text=""></asp:Label>
-                        <asp:Label ID="lblPrice" runat="server" Text=""></asp:Label>
-                        <br />
+                    <div id="DatosdelItem" style="height: 50%; margin-top: 20px; margin-bottom: 20px; margin-top:25%;">
+                     
+                            <h3 id="lblName" runat="server"></h3>
+                            <p id="lblDescription" runat="server"></p>
+                            <p><strong id="lblPrice" runat="server" style="font-size: 24px;"></strong></p>
+
+                            <div class="mb-3">
+                                <select class="form-select" id="select1" name="select1">
+                                    <option value="-1" selected>Unit: Select</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10+</option>
+                                </select>
+                            </div>
+                            <a href="#" class="btn btn-primary" onclick="Addtocart(<%: item.Id %>); return false;" style="background-color: green; color: white;">Add to cart</a>
+                      
                     </div>
                 </div>
-
-
-
 
             </div>
 
