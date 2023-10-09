@@ -33,9 +33,7 @@ namespace CartWeb
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-<<<<<<< Updated upstream
         /// ContentPlaceHolder1 control.
-=======
         /// Control tbFilter.
         /// </summary>
         /// <remarks>
@@ -73,7 +71,6 @@ namespace CartWeb
 
         /// <summary>
         /// Control ContentPlaceHolder1.
->>>>>>> Stashed changes
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
