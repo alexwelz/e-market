@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class ItemList 
+    public class ItemList
     {
-        public string itemCode { get; set; }     
         public int Amount { get; set; } 
         public List<Item> DeletedItem { get; set; }
         public List<Item> AddedItem { get; set; }
@@ -18,7 +17,6 @@ namespace Domain
             DeletedItem = new List<Item>();
             AddedItem = new List<Item>();
         }
-       
 
 
     }
