@@ -37,7 +37,7 @@ namespace CartWeb
                     }
                     else
                     {
-                        //The article no its valid
+                        ResolveUrl("~/Default.aspx");
                     }
                 }
                 else
