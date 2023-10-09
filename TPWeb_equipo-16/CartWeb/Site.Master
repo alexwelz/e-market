@@ -90,6 +90,9 @@
                     <div class="mb-2">
                         <a class="text-secondary text-decoration-none" href="#"><i class="bi bi-whatsapp"></i></a>
                     </div>
+                     <div class="mb-2">
+                        <a class="btn btn-warning text-light text-decoration-none"  href="CancelOrder.aspx"><strong>Repentance</strong></a>
+                    </div>
                 </div>
                 <div class="col-xs-12">
                     <p style="color: azure; padding-top:20px"; class="text-white text-center">&copy; 2023 - MyShoppingCart</p>
