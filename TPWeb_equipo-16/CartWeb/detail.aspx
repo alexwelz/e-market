@@ -52,6 +52,7 @@
                     <div id="DatosdelItem" >
                      
                             <h3 id="lblName" runat="server"></h3>
+                            <p><strong id="lblBrand" runat="server" style="font-size: 12px; color: dimgray;"></strong></p>
                             <p id="lblDescription" runat="server"></p>
                             <p><strong id="lblPrice" runat="server" style="font-size: 24px;"></strong></p>
 

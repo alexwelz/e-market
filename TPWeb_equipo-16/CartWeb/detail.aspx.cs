@@ -31,6 +31,7 @@ namespace CartWeb
                     if (item != null)
                     {
                         lblName.InnerText = item.Name;
+                        lblBrand.InnerText = item.Brand.Descripcion;
                         lblDescription.InnerText = item.Description;
                         lblPrice.InnerText = "$" + item.Price.ToString();
 

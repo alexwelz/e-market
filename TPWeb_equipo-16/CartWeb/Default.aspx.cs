@@ -19,41 +19,20 @@ namespace CartWeb
             ItemManager iManager = new ItemManager();
             BrandManager bManager = new BrandManager();
             CategoryManager cManager = new CategoryManager();
-            itemList = iManager.spListar();
             brandsList = bManager.listar();
             categorysList = cManager.listar();
 
-
-        }
-
-        protected void ddlField_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (IsPostBack)
+            if (!IsPostBack)
             {
 
-
-                string opcion = ddlField.SelectedItem.ToString();
-                if (opcion == "Precio")
-                {
-
-                    ddlCriterion.Items.Clear();
-                    ddlCriterion.Items.Add("Greater than");
-                    ddlCriterion.Items.Add("Less than");
-                    ddlCriterion.Items.Add("Equal to");
-                    ddlCriterion.DataBind();
-                }
-
-                else
-                {
-                    ddlCriterion.Items.Clear();
-
-                    ddlCriterion.Items.Add("Starts with");
-                    ddlCriterion.Items.Add("Ends with");
-                    ddlCriterion.Items.Add("Contains");
-                    ddlCriterion.DataBind();
-                }
+                itemList = iManager.spListar();
+                
 
             }
+
+
         }
+
+        
     }
 }
