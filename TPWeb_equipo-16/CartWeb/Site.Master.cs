@@ -18,10 +18,7 @@ namespace CartWeb
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ItemManager iManager = new ItemManager();
-            Session.Add("List", iManager.spListar());
             CartShop = new Cart();
-
             Session.Add("Cart", CartShop);
         }
 
@@ -32,8 +29,11 @@ namespace CartWeb
 
         protected void search(string text)
         {
-            List<Item> aux = (List<Item>)Session["List"];
-            filterList = aux.FindAll(x => x.Name.ToUpper().Contains(text.ToUpper()));
+            ItemManager iManager = new ItemManager();
+            List<Item> aux = iManager.spListar();
+            filterList = aux.FindAll(x => x.Name.ToUpper().Contains(text.ToUpper()) ||
+            x.Brand.Descripcion.ToUpper().Contains(text.ToUpper()) ||
+            x.Category.Descripcion.ToUpper().Contains(text.ToUpper()));
             Session.Add("filteredItems", filterList);
             if (!string.Equals(Request.Url.AbsolutePath, "/Default.aspx", StringComparison.OrdinalIgnoreCase))
             {

@@ -19,15 +19,6 @@ namespace CartWeb
 
             itemList = iManager.spListar();
 
-            if (!IsPostBack)
-            {
-
-                itemList = iManager.spListar();
-                
-
-            }
-
-
         }
 
         

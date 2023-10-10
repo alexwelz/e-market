@@ -6,7 +6,7 @@
 
     <div class="container">
         <center>
-            <div class="row">
+            <div class="row" style="margin-top: 10%; margin-bottom: 10%">
                 <div class="col-md-8">
 
 
@@ -68,7 +68,7 @@
                                     
                                 </select>
                             </div>
-                            <a href="#" class="btn btn-primary" onclick="Addtocart(<%: item.Id %>); return false;" style="background-color: green; color: white;">Add to cart</a>
+                           <a href="#" class="btn btn-primary" onclick="AddItemToCart(<%: item%>); return false;" style="background-color:tomato; color: white; font-weight: bold; border-color:dimgrey;">Add to cart</a>
                       
                     </div>
                 </div>
