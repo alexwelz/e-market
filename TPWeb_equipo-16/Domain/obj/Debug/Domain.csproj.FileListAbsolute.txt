@@ -22,3 +22,9 @@ C:\Users\Aleja\source\repos\WindowsFormsApp2\CarritoDeCompras\TPWeb_equipo-16\Do
 C:\Users\Aleja\source\repos\WindowsFormsApp2\CarritoDeCompras\TPWeb_equipo-16\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
 C:\Users\Aleja\source\repos\WindowsFormsApp2\CarritoDeCompras\TPWeb_equipo-16\Domain\obj\Debug\Domain.dll
 C:\Users\Aleja\source\repos\WindowsFormsApp2\CarritoDeCompras\TPWeb_equipo-16\Domain\obj\Debug\Domain.pdb
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\Domain\bin\Debug\Domain.dll
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\Domain\bin\Debug\Domain.pdb
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\Domain\obj\Debug\Domain.dll
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\Domain\obj\Debug\Domain.pdb

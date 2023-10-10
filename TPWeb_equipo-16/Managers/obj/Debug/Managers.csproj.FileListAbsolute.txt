@@ -34,3 +34,12 @@ C:\Users\Aleja\source\repos\WindowsFormsApp2\CarritoDeCompras\TPWeb_equipo-16\Ma
 C:\Users\Aleja\source\repos\WindowsFormsApp2\CarritoDeCompras\TPWeb_equipo-16\Managers\obj\Debug\Managers.csproj.CopyComplete
 C:\Users\Aleja\source\repos\WindowsFormsApp2\CarritoDeCompras\TPWeb_equipo-16\Managers\obj\Debug\Managers.dll
 C:\Users\Aleja\source\repos\WindowsFormsApp2\CarritoDeCompras\TPWeb_equipo-16\Managers\obj\Debug\Managers.pdb
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\Managers\bin\Debug\Managers.dll
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\Managers\bin\Debug\Managers.pdb
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\Managers\bin\Debug\Domain.dll
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\Managers\bin\Debug\Domain.pdb
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\Managers\obj\Debug\Managers.csproj.AssemblyReference.cache
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\Managers\obj\Debug\Managers.csproj.CoreCompileInputs.cache
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\Managers\obj\Debug\Managers.csproj.CopyComplete
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\Managers\obj\Debug\Managers.dll
+C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\Managers\obj\Debug\Managers.pdb
