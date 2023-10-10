@@ -4,13 +4,39 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Domain;
 
 namespace CartWeb
 {
     public partial class Cart : System.Web.UI.Page
+
     {
+        public Domain.Cart currentCart { get; set; }
+        public void addToCurrent(Item item)
+        {
+            currentCart.AddItemToCart(item);
+            Session["Cart"] = currentCart;
+
+        }
+        public void deleteToCurrent(Item item)
+        {
+            currentCart.RemoveItemFromCart(item);
+            Session["Cart"] = currentCart;
+
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (currentCart != null)
+            {
+                // Obtiene el carrito de la sesión
+                var aux = (Domain.Cart)Session["Cart"];
+                currentCart.itemList = aux.itemList;
+                currentCart.Total = aux.Total;
+                currentCart.TotalProducts = aux.TotalProducts;
+
+
+            }
 
         }
     }

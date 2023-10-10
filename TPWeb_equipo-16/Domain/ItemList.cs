@@ -8,6 +8,7 @@ namespace Domain
 {
     public class ItemList
     {
+        public string itemCode { get; set; }
         public int Amount { get; set; } 
         public List<Item> DeletedItem { get; set; }
         public List<Item> AddedItem { get; set; }
