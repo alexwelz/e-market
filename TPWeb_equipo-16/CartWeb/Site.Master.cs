@@ -23,13 +23,17 @@ using Managers;
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
           search(tbFilter.Text);
+      
         }
 
         protected void search(string text)
         {
             List<Item> aux = (List<Item>)Session["List"];
-            filterList = aux.FindAll(x => x.Name.ToUpper().Contains(text.ToUpper()));
+            filterList = aux.FindAll(x => x.Name.ToUpper().Contains(text.ToUpper()) ||
+            x.Brand.Descripcion.ToUpper().Contains(text.ToUpper()) ||
+            x.Category.Descripcion.ToUpper().Contains(text.ToUpper()));
             Session.Add("filteredItems", filterList);
+
             if (!string.Equals(Request.Url.AbsolutePath, "/Default.aspx", StringComparison.OrdinalIgnoreCase))
             {
                 Response.Redirect($"Default.aspx");

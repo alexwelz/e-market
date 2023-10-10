@@ -7,10 +7,11 @@
 <div class="container">
   
 
-    <% if (itemList == null || (List<Domain.Item>)Session["filteredItems"] != null)
-    { 
-        itemList = (List<Domain.Item>)Session["filteredItems"]; 
-    }  
+    <% if ((List<Domain.Item>)Session["filteredItems"] != null)
+        {
+            itemList = (List<Domain.Item>)Session["filteredItems"];
+            Session.Remove("filteredItems");
+        }
     %>
 
     <div class="row" style="margin-top: 50px; margin-left: 25px; margin-right:25px;">
@@ -35,6 +36,8 @@
         <% } %>
     </div>
 </div>
+
+       
 
 
 </asp:Content>

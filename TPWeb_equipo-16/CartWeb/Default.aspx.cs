@@ -12,15 +12,12 @@ namespace CartWeb
     public partial class WebForm1 : System.Web.UI.Page
     {
         public List<Item> itemList { get; set; }
-        public List<Brand> brandsList { get; set; }
-        public List<Category> categorysList { get; set; }
+ 
         protected void Page_Load(object sender, EventArgs e)
         {
             ItemManager iManager = new ItemManager();
-            BrandManager bManager = new BrandManager();
-            CategoryManager cManager = new CategoryManager();
-            brandsList = bManager.listar();
-            categorysList = cManager.listar();
+
+            itemList = iManager.spListar();
 
             if (!IsPostBack)
             {

@@ -38,13 +38,17 @@
     <div id="headerBanner" style="background-image: url('https://static.vecteezy.com/system/resources/previews/004/672/772/non_2x/flash-sale-banner-design-template-offer-shopping-on-dark-blue-background-free-vector.jpg'); background-size: cover; background-position: center; height: 200px;">
     </div>
         --%>
-
-    <form id="form1" runat="server">
+     <form id="form1" runat="server">
         <div>
             <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
               
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"> Market </a>
+
+    <div class="container-fluid">
+   <%-- <a class="navbar-brand" href="#"> Market </a> --%> 
+      <a class="navbar-brand" style="font-size: 39px;" href="Default.aspx">
+          <img src="logo2.png" width="64" height="47" alt="e-Market">
+          e-Market
+          </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
