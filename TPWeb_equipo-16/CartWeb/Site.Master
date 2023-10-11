@@ -58,7 +58,7 @@
             <div class="mx-auto d-flex">
             <form class="d-flex" role="search">
           <asp:TextBox runat="server" ID="tbFilter" class="form-control me-2" placeholder="Search by name, brand and category..." aria-label="search" style="width: 700px;"></asp:TextBox>
-          <asp:Button runat="server" Text="Search" ID="Button1"   OnClick="btnBuscar_Click"  class="btn btn-outline-light"></asp:Button>
+          <asp:Button runat="server" Text="Search" ID="btnBuscar"   OnClick="btnBuscar_Click"  class="btn btn-outline-light" UseSubmitBehavior="false"></asp:Button>
    
       </form>
          </div>

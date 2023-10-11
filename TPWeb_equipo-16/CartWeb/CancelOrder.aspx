@@ -5,7 +5,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
- <%--   <form action="https://formsubmit.co/e2cd44985c2c967a2bf54fefb9d154eb" method="POST">--%>
+    <%--Datos Mail: cartproyect@gmail.com Contraseña: TPWeb_equipo-16--%>
+    <form action="https://formsubmit.co/e7c674b30a5e1e5cfd2246a1f59c28c2" method="POST">
         <div class="container" style="margin-top: 50px;">
 
             <div class="row mb-3">
@@ -27,7 +28,8 @@
                 <div class="col-md-6">
                     <label for="typeDocument" class="form-label">Type of Document</label>
                     <div class="input-group">
-                        <select class="form-select" id="typeDocument">
+                        <select class="form-select" id="typeDocument" name="typeDocument" required>
+                            <option value="-1" selected>Select option</option>
                             <option value="DNI">DNI</option>
                             <option value="Passport">Passport</option>
                             <option value="identificationCard">identification card</option>
@@ -51,7 +53,7 @@
 
             <label for="reasonRegret" class="form-label">Reason for regret</label>
             <div class="input-group" style="margin-bottom: 20px;">
-                <select class="form-select" id="reasonRegret">
+                <select class="form-select" id="reasonRegret" name="reasonRegret" required>
                     <option value="-1" selected>Select option</option>
                     <option value="1">I made a mistake when making the purchase</option>
                     <option value="2">For late delivery</option>
@@ -64,26 +66,26 @@
             <div class="mb-3">
                 <label for="orderNumber" class="form-label">Order number</label>
                 <div class="input-group">
-                    <input type="text" class="form-control" id="orderNumber" placeholder="Order (PENDING)" name="orderNumber" required>
+                    <input type="text" class="form-control" id="orderNumber" placeholder="Purchase order " name="orderNumber" required>
                 </div>
             </div>
 
             <div class="mb-3">
                 <label for="comments" class="form-label">Comments</label>
                 <div class="input-group">
-                    <textarea class="form-control" id="comments" cols="30" rows="10" placeholder="Your Message" name="comments" required></textarea>
+                    <textarea class="form-control" id="comments" cols="30" rows="10" placeholder="Your Message" name="comments" style=" resize: none;" required></textarea>
                 </div>
             </div>
-            <button type="submit" value="Send Message" class="btn btn-primary" id="liveAlertBtn" style="background-color: green; margin-bottom: 50px;"><strong>Send Message</strong></button>
+
+            <button type="submit" value="Send Message"class="btn btn-primary" id="liveAlertBtn" style="background-color: green; margin-bottom: 50px;"><strong>Send Message</strong></button>
             <a class="btn btn-secondary text-light text-decoration-none"  href="Default.aspx" style="margin-bottom:50px;"><strong>Back</strong></a>
             <div id="liveAlertPlaceholder"></div>
-            <%--<input type="hidden" name="_next" value=""></input>
-            <input type="hidden" name="_captcha" value="false"></input>--%>
-           
+            <input type="hidden" name="_next" value="https://localhost:44394/Default.aspx"></input>
+            <input type="hidden" name="_captcha" value="false"></input>
+
+            <p style="color:red"><strong>Datos Mail: cartproyect@gmail.com Contraseña: TPWeb_equipo-16</strong></p>
 
         </div>
- <%--   </form>--%>
-
 
     <script>
 
@@ -114,8 +116,10 @@
             alertTrigger.addEventListener('click', () => {
                 const nameInput = document.querySelector('input[name="name"]');
                 const lastNameImput = document.querySelector('input[name="lastName"]');
+                const typeDocumentSelect = document.querySelector('select[name="typeDocument"]');
                 const numberImput = document.querySelector('input[name="number"]');
                 const emailInput = document.querySelector('input[name="Email"]');
+                const reasonRegretSelect = document.querySelector('select[name="reasonRegret"]');
                 const orderNumberImput = document.querySelector('input[name="orderNumber"]');
                 const messageTextarea = document.querySelector('textarea[name="comments"]');
 
@@ -123,10 +127,14 @@
                     appendAlert('Please enter your name.', 'danger');
                 } else if (lastNameImput.value === '') {
                     appendAlert('Please enter your last name.', 'danger');
+                } else if (typeDocumentSelect.value === '-1') {
+                    appendAlert('Please enter your select option', 'danger');
                 } else if (numberImput.value === '') {
                     appendAlert('Please enter your document number.', 'danger');
                 } else if (emailInput.value === '') {
                     appendAlert('Please enter your email address. Example: example@gmail.com', 'danger');
+                } else if (reasonRegretSelect.value === '-1') {
+                    appendAlert('Please enter your select option', 'danger');
                 } else if (orderNumberImput.value === '') {
                     appendAlert('Please enter the order number.', 'danger');
                 } else if (messageTextarea.value === '') {
@@ -137,6 +145,10 @@
             });
         }
 
+
     </script>
+
+ 
+
 
 </asp:Content>
