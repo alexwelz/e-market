@@ -19,37 +19,24 @@ namespace CartWeb
             ItemManager iManager = new ItemManager();
             itemList = iManager.spListar();
 
+            int itemId = Request.QueryString["id"] != null && int.TryParse(Request.QueryString["id"], out int id) ? id : -1;
+            item = itemList.FirstOrDefault(i => i.Id == itemId);
 
-            if (!IsPostBack)
+            if(item != null && !IsPostBack)
             {
-                int itemId = Request.QueryString["id"] != null && int.TryParse(Request.QueryString["id"], out int id) ? id : -1;
-
-                if (itemId != -1)
-                {
-                    item = itemList.FirstOrDefault(i => i.Id == itemId);
-
-                    if (item != null)
-                    {
-                        lblName.InnerText = item.Name;
-                        lblBrand.InnerText = item.Brand.Descripcion;
-                        lblDescription.InnerText = item.Description;
-                        lblPrice.InnerText = "$" + item.Price.ToString();
-
-                    }
-                    else
-                    {
-                        ResolveUrl("~/Default.aspx");
-                    }
-                }
-                else
-                {
-                    //The id no its valid
-                }
+                lblName.InnerText = item.Name;
+                lblBrand.InnerText = item.Brand.Descripcion;
+                lblDescription.InnerText = item.Description;
+                lblPrice.InnerText = "$" + item.Price.ToString();
             }
             else
             {
-
+                Response.Redirect("~/Error.aspx");
             }
+
+
+         
+           
 
 
         }

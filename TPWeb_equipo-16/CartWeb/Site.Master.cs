@@ -13,12 +13,12 @@ namespace CartWeb
 {
     public partial class Site : System.Web.UI.MasterPage
     {
-        public Cart CartShop { get; set; }
+        public ShoppingCart CartShop { get; set; }
         public List<Item> filterList { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            CartShop = new Cart();
+            CartShop = new ShoppingCart();
             Session.Add("Cart", CartShop);
         }
 

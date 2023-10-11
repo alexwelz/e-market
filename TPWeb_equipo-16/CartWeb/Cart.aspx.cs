@@ -11,7 +11,7 @@ namespace CartWeb
     public partial class Cart : System.Web.UI.Page
 
     {
-        public Domain.Cart currentCart { get; set; }
+        public Domain.ShoppingCart currentCart { get; set; }
         public void addToCurrent(Item item)
         {
             currentCart.AddItemToCart(item);
@@ -26,17 +26,36 @@ namespace CartWeb
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+            ShoppingCart cart = (ShoppingCart)Session["Cart"];
 
-            if (currentCart != null)
+            if (cart.TotalProducts!=0 && !IsPostBack)
+            {
+               
+            }
+            else
+            {
+                Response.Redirect("~/EmptyCart.aspx");
+            }
+
+            if (currentCart != null )
             {
                 // Obtiene el carrito de la sesión
-                var aux = (Domain.Cart)Session["Cart"];
+                var aux = (Domain.ShoppingCart)Session["Cart"];
                 currentCart.itemList = aux.itemList;
                 currentCart.Total = aux.Total;
                 currentCart.TotalProducts = aux.TotalProducts;
 
 
             }
+            else
+            {
+
+            }
+            
+
+            
+           
+
 
         }
     }

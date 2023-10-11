@@ -20,11 +20,16 @@
 
 <body>
 
+        <div id="headerBanner" style="background-image:url(banner.jpg) ; background-size:cover ; background-position:center; height: 400px;">
+    </div>
+
+    <%--
     <div id="headerPublicity" style="background-image: url('https://static.vecteezy.com/system/resources/previews/000/669/988/original/vector-shopping-online-banner.jpg'); background-size: cover; background-position: center; height: 400px;">
         <center>
         </center>
 
     </div>
+        --%>
 
 
     <form id="form1" runat="server">
@@ -52,7 +57,7 @@
           </ul>
             <div class="mx-auto d-flex">
             <form class="d-flex" role="search">
-          <asp:TextBox runat="server" ID="tbFilter" class="form-control me-2" placeholder="Search by name..." aria-label="search" style="width: 700px;"></asp:TextBox>
+          <asp:TextBox runat="server" ID="tbFilter" class="form-control me-2" placeholder="Search by name, brand and category..." aria-label="search" style="width: 700px;"></asp:TextBox>
           <asp:Button runat="server" Text="Search" ID="Button1"   OnClick="btnBuscar_Click"  class="btn btn-outline-light"></asp:Button>
    
       </form>

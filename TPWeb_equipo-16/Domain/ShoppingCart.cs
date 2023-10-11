@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class Cart
+    public class ShoppingCart
     {
         public int TotalProducts { get; set; }
 
         public decimal Total { get; set; }
         public List<ItemList> itemList { get; set; }
 
-        public Cart()
+        public ShoppingCart()
         {
             itemList = new List<ItemList>();
             Total = 0;
