@@ -374,5 +374,20 @@ namespace Managers
                 throw ex;
             }
         }
+        public Item newItemByCode(string itemCode)
+        {
+            Item item = new Item();
+            List <Item> AllItemsofDB  = new List<Item>();
+            AllItemsofDB = Listacompleta();
+            foreach (Item current in AllItemsofDB)
+            {
+                if(current.ItemCode == itemCode)
+                {
+                    item = current;
+                    break;
+                }
+            }
+            return item;
+        }
     }
 }

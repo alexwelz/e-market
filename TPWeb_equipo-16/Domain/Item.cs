@@ -21,8 +21,12 @@ namespace Domain
 
         public Item()
         {
+            Price = 0;
+            Name = "none";
+            Description = "none"; 
             Brand = new Brand();
             Category = new Category();
+            Images = new List<UrlImage>();
         }
         public Item(string artCode, string name, string description, Brand brand, Category category, decimal price)
         {
@@ -37,6 +41,7 @@ namespace Domain
             Images = new List <UrlImage>();
 
         }
+       
 
     }
     

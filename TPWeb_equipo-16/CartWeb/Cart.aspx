@@ -7,8 +7,8 @@
     <ItemTemplate>
         <div class="col-12 col-md-6 col-lg-4 mb-2">
             <div class="card" style="border-color: darkgray; height: 100%;">
-                <a href="<%#ResolveUrl("~/Detail.aspx?id="+Eval("Id"))%>">
-                    <img src="<%#Eval("Images[0]")%>" class="card-img-top" style="object-fit: scale-down; height: 25vh; width: 100%;" alt="..." />
+                <a href="<%# ResolveUrl("~/Detail.aspx?id=" + Eval("Id")) %>">
+                    <img src="<%# Eval("Images[0]") %>" class="card-img-top" style="object-fit: scale-down; height: 25vh; width: 100%;" alt="...">
                 </a>
                 <div class="card-body text-center" style="margin-bottom: 20px;">
                     <center>

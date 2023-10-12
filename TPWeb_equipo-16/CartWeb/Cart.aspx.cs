@@ -31,7 +31,7 @@ namespace CartWeb
             currentCart = (ShoppingCart)Session["Cart"];
            
 
-            if (currentCart.TotalProducts == 0)
+            if (currentCart.TotalProducts == 0 )
             {
                 Response.Redirect("~/EmptyCart.aspx");
             }
