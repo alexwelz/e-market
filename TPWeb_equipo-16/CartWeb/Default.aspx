@@ -8,16 +8,17 @@
   
 
  <% if ((List<Domain.Item>)Session["filteredItems"] != null)
-        {
-            itemList = (List<Domain.Item>)Session["filteredItems"];
-            Session.Remove("filteredItems");
-        }
+     {
+         itemList = (List<Domain.Item>)Session["filteredItems"];
+         Session.Remove("filteredItems");
+     }
+     int cont = 0;
     %>
 
     <div class="row" style="margin-top: 50px; margin-left: 25px; margin-right:25px; margin-bottom: 50px;">
 
         <% foreach (Domain.Item item in itemList)
-        { %>
+            { %>
         <div class="col-12 col-md-6 col-lg-4 mb-2">
             <div class="card" style="border-color:darkgray; height:100%;">
                 <a href="<%: ResolveUrl("~/Detail.aspx?id=" + item.Id) %>">
@@ -33,7 +34,8 @@
                     <p class="card-text" style="font-size: 12px;"><%: item.Description %></p>
                     <p class="card-text" style="font-size: 14px;">$ <%: item.Price %></p>
                     <div class="btn-group" role="group">
-                        <a href="#" class="btn btn-primary" onclick="AddItemToCart(<%: item%>); return false;" style="background-color:tomato; color: white; font-weight: bold; border-color:dimgrey;">Add to cart</a>
+                         <asp:Button runat="server" Text="Add To Cart" ID="btnAddToCart"   OnClick="btnAddToCart_Click"  class="btn btn-outline-light" UseSubmitBehavior="false" CommandArgument='<%=cont%>'> </asp:Button>
+   
                         <a href="<%: ResolveUrl("~/Detail.aspx?id=" + item.Id) %>" class="btn btn-outline-secondary" style="font-weight: bold; border-color:dimgrey;" title="Detail">+</a>
                     </div>
                     </center>
@@ -41,11 +43,20 @@
                    
             </div>
         </div>
-        <% } %>
+        <%cont++;
+            } %>
     </div>
       
 </div>
-
+    <div style="width:100%;color:red;">
+        <h1>Contador : </h1>
+    <%if (currentCart != null)
+        {
+            if (currentCart.itemList.Count() > 0){%>
+    <h1 style="color:red;">  <%currentCart.itemList.Count().ToString(); %></h1>
+    <%}
+        }%>
+ </div>
 
 </asp:Content>
 

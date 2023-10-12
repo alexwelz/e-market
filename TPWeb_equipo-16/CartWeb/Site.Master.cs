@@ -15,11 +15,19 @@ namespace CartWeb
     {
         public ShoppingCart CartShop { get; set; }
         public List<Item> filterList { get; set; }
-
+      
         protected void Page_Load(object sender, EventArgs e)
         {
-            CartShop = new ShoppingCart();
-            Session.Add("Cart", CartShop);
+            if (!IsPostBack && Session["Cart"]== null)
+            {
+                CartShop = new ShoppingCart();
+                Session.Add("Cart", CartShop);
+            }
+            else
+            {
+                CartShop =(ShoppingCart) Session["Cart"];
+            }
+            
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)

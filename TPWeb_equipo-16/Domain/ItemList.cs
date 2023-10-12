@@ -15,6 +15,8 @@ namespace Domain
 
         public ItemList()
         {
+            itemCode = "";
+            Amount = 0;
             DeletedItem = new List<Item>();
             AddedItem = new List<Item>();
         }

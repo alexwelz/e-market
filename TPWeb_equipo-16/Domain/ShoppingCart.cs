@@ -23,56 +23,66 @@ namespace Domain
         }
         public void AddItemToCart(Item item)
         {
-            // Busca la ItemList con el mismo itemCode que el del producto que deseas agregar
-            var itemListContainingItem = itemList.FirstOrDefault(il => il.itemCode.Equals(item.ItemCode, StringComparison.OrdinalIgnoreCase));
 
-            if (itemListContainingItem != null)
+            bool exist = false;
+            if (itemList != null)
             {
+                for (int i = 0; i < itemList.Count() - 1; i++)
+                {
+                    if (itemList[i].itemCode == item.ItemCode)
+                    {
+                        if (itemList[i].Amount > 1)
+                        {
+                           
+                            itemList[i].AddedItem.Add(item);
+                            itemList[i].Amount++;
+                            exist = true;
+                        }
 
-                itemListContainingItem.AddedItem.Add(item);
-                itemListContainingItem.Amount++;
+                    }
+                }
+                if (!exist)
+                {
+                    ItemList newList = new ItemList();
 
 
+                    newList.itemCode = item.ItemCode;
 
+                    newList.AddedItem.Add(item);
+                    itemList.Add(newList);
+                }
+
+
+                reloadCartPropertys();
             }
-            else
-            {
-                // Si el ítem no existe en ninguna ItemList, crea una nueva ItemList con el itemCode del producto
-                var newItemList = new ItemList { itemCode = item.ItemCode, Amount = 1 };
-
-                // Agrega el producto a la lista AddedItem de la nueva ItemList
-                newItemList.AddedItem.Add(item);
-
-                // Agrega la nueva ItemList al carrito
-                itemList.Add(newItemList);
-            }
-
 
         }
         public void RemoveItemFromCart(Item item)
         {
-            // Busca el ItemList que contiene el ítem
-            var itemListContainingItem = itemList.FirstOrDefault(il => il.itemCode.Equals(item.ItemCode, StringComparison.OrdinalIgnoreCase));
-
-            if (itemListContainingItem != null)
+            for (int i = 0; i < itemList.Count()-1;  i++)
             {
-                if (itemListContainingItem.Amount > 1)
+                if (itemList[i].itemCode == item.ItemCode)
                 {
-                    // Si hay más de un ítem en el ItemList, disminuye la cantidad
-                    itemListContainingItem.Amount--;
-                }
-                else
-                {
-                    // Si solo hay uno, elimina completamente el ItemList
-                    itemList.Remove(itemListContainingItem);
-                }
+                    if (itemList[i].Amount > 1)
+                    {
+                        // Si hay más de un ítem en el ItemList, disminuye la cantidad                     
+                        itemList[i].DeletedItem.Add(item);
+                        itemList[i].AddedItem.RemoveAt(itemList[i].AddedItem.Count - 1);
+                        itemList[i].Amount--;
+                    }
+                    else
+                    {
+                        // Si solo hay uno, elimina completamente el ItemList
+                        itemList.RemoveAt(i);
 
-                // Agrega el ítem a la lista DeletedItem del ItemList
-                itemListContainingItem.DeletedItem.Add(item);
+                    }
 
-                // Remueve el ítem de la lista AddedItem del ItemList, si existe
-                itemListContainingItem.AddedItem.Remove(item);
+                    // Rompe el bucle ya que hemos encontrado y manejado el artículo.
+                    break;
+                }
             }
+
+            reloadCartPropertys();
         }
         public void ClearCart()
         {
