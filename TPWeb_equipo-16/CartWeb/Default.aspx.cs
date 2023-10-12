@@ -27,36 +27,22 @@ namespace CartWeb
         protected void btnAddToCart_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            string commandArgument = btn.CommandArgument;
-
-            int index;
-
-            Item item;
-          
-            try
+            string itemCode = btn.CommandArgument.ToString();
+            ItemManager iManager = new ItemManager();
+            List<Item> aux = iManager.spListar();
+            Item item = new Item();
+           
+            for(int i = 0; i < aux.Count(); i++)
             {
-                if (int.TryParse(commandArgument, out index))
+                if(aux[i].ItemCode == itemCode)
                 {
-                    item = itemList[index];
-                    currentCart.AddItemToCart(item);
-                }
-                else
-                {
-                    // Manejar el caso en el que la conversión no fue exitosa (no era un número entero).
+                   item = aux[i];
+                 
                 }
             }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-           
-            
-         
-           
-            
+    
+            currentCart.AddItemToCart(item);
             currentCart.TotalProducts++;
-           
             Session["Cart"] = currentCart;
 
 

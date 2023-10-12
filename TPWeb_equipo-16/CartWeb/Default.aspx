@@ -30,11 +30,11 @@
                     <center>
                     
                     <p class="card-text" style="font-size: 16px; color: black;"><strong><%: item.Brand.Descripcion%></strong></p>
-                    <p class="card-title" style="font-size: 15px;"><%: item.Name %></p>
+                    <p class="card-title" style="font-size: 15px;"><%: item.Name  %></p>
                     <p class="card-text" style="font-size: 12px;"><%: item.Description %></p>
                     <p class="card-text" style="font-size: 14px;">$ <%: item.Price %></p>
                     <div class="btn-group" role="group">
-                         <asp:Button runat="server" Text="Add To Cart" ID="btnAddToCart"   OnClick="btnAddToCart_Click"  class="btn btn-outline-light" UseSubmitBehavior="false" CommandArgument='<%=cont%>'> </asp:Button>
+                         <asp:Button runat="server" Text="Add To Cart" ID="btnAddToCart"   OnClick="btnAddToCart_Click"  class="btn btn-outline-light" UseSubmitBehavior="false" CommandArgument='<%=item.ItemCode%>'> </asp:Button>
    
                         <a href="<%: ResolveUrl("~/Detail.aspx?id=" + item.Id) %>" class="btn btn-outline-secondary" style="font-weight: bold; border-color:dimgrey;" title="Detail">+</a>
                     </div>
@@ -50,12 +50,17 @@
 </div>
     <div style="width:100%;color:red;">
         <h1>Contador : </h1>
-    <%if (currentCart != null)
-        {
-            if (currentCart.itemList.Count() > 0){%>
+       <%if (currentCart == null)
+           {%>
+        
+        <h1>0 </h1>
+         <%  }
+             else
+             {
+           %>
     <h1 style="color:red;">  <%currentCart.itemList.Count().ToString(); %></h1>
     <%}
-        }%>
+        %>
  </div>
 
 </asp:Content>
