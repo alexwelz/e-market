@@ -22,7 +22,7 @@
         <div class="col-12 col-md-6 col-lg-4 mb-2">
             <div class="card" style="border-color:darkgray; height:100%;">
                 <a href="<%: ResolveUrl("~/Detail.aspx?id=" + item.Id) %>">
-                    <%--<img src="<%: item.Images[0] %>" class="card-img-top" style="max-height: 200px;  max-width:100%; display: flex;  justify-content: center; align-items: center;   overflow: hidden;" alt="...">--%>
+                  
                     <img src="<%: item.Images[0] %>" class="card-img-top" style="object-fit:scale-down; height: 25vh; width: 100%;"  alt="...">
                 </a>
        
@@ -34,7 +34,8 @@
                     <p class="card-text" style="font-size: 12px;"><%: item.Description %></p>
                     <p class="card-text" style="font-size: 14px;">$ <%: item.Price %></p>
                     <div class="btn-group" role="group">
-                         <asp:Button runat="server" Text="Add To Cart" ID="btnAddToCart"   OnClick="btnAddToCart_Click"  class="btn btn-outline-light" UseSubmitBehavior="false" CommandArgument='<%=item.ItemCode%>'> </asp:Button>
+                         <asp:Button runat="server" Text="Add To Cart" ID="btnAddToCart"   OnClick="btnAddToCart_Click"  class="btn btn-outline-light" UseSubmitBehavior="false" CommandArgument='<%=item.ItemCode%>'
+                             style="background-color:tomato; color:white; font-weight:bold; border-color:dimgray"> </asp:Button>
    
                         <a href="<%: ResolveUrl("~/Detail.aspx?id=" + item.Id) %>" class="btn btn-outline-secondary" style="font-weight: bold; border-color:dimgrey;" title="Detail">+</a>
                     </div>
@@ -63,6 +64,8 @@
         %>
  </div>
 
+
+  
 </asp:Content>
 
 

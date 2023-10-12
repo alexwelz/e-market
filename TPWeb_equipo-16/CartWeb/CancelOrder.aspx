@@ -5,7 +5,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-    <%--Datos Mail: cartproyect@gmail.com Contraseña: TPWeb_equipo-16--%>
     <form action="https://formsubmit.co/e7c674b30a5e1e5cfd2246a1f59c28c2" method="POST">
         <div class="container" style="margin-top: 50px;">
 
@@ -55,11 +54,11 @@
             <div class="input-group" style="margin-bottom: 20px;">
                 <select class="form-select" id="reasonRegret" name="reasonRegret" required>
                     <option value="-1" selected>Select option</option>
-                    <option value="1">I made a mistake when making the purchase</option>
-                    <option value="2">For late delivery</option>
-                    <option value="3">No discount/promotion applied</option>
-                    <option value="4">No discount coupon applied</option>
-                    <option value="5">My order arrived incomplete</option>
+                    <option value="I made a mistake when making the purchase">I made a mistake when making the purchase</option>
+                    <option value="For late delivery">For late delivery</option>
+                    <option value="No discount/promotion applied">No discount/promotion applied</option>
+                    <option value="No discount coupon applied">No discount coupon applied</option>
+                    <option value="My order arrived incomplete">My order arrived incomplete</option>
                 </select>
             </div>
 
@@ -83,7 +82,7 @@
             <input type="hidden" name="_next" value="https://localhost:44394/Default.aspx"></input>
             <input type="hidden" name="_captcha" value="false"></input>
 
-            <p style="color:red"><strong>Datos Mail: cartproyect@gmail.com Contraseña: TPWeb_equipo-16</strong></p>
+            <p style="color:red"><strong>Data Mail: cartproyect@gmail.com Password: TPWeb_equipo-16</strong></p>
 
         </div>
 
@@ -147,8 +146,5 @@
 
 
     </script>
-
- 
-
 
 </asp:Content>

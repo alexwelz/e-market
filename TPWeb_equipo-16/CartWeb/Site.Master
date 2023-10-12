@@ -109,7 +109,7 @@
                         <a class="text-secondary text-decoration-none" href="#">My orders</a>
                     </div>
                      <div class="mb-2">
-                        <a class="text-secondary text-decoration-none" href="#">My cart</a>
+                        <a class="text-secondary text-decoration-none" href="Cart.aspx">My cart</a>
                     </div>
                      <div class="mb-2">
                         <a class="text-secondary text-decoration-none" href="#">Shipping costs</a>
@@ -118,7 +118,7 @@
                  <div class="col-xs-12 col-md-6 col-lg-3">
                     <p style="color: azure;" class="h5 mb-3">Customer Service</p>
                     <div class="mb-2">
-                        <a class="text-secondary text-decoration-none" href="#">Help Center</a>
+                        <a class="text-secondary text-decoration-none" href="AskedQuestions.aspx">Help Center</a>
                     </div>
                      <div class="mb-2">
                         <a class="text-secondary text-decoration-none" href="#">Terms and Conditions</a>

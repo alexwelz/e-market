@@ -80,6 +80,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AskedQuestions.aspx" />
     <Content Include="CancelOrder.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -124,6 +125,13 @@
     <Content Include="Default.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AskedQuestions.aspx.cs">
+      <DependentUpon>AskedQuestions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AskedQuestions.aspx.designer.cs">
+      <DependentUpon>AskedQuestions.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BundleConfig.cs" />
     <Compile Include="CancelOrder.aspx.cs">
       <DependentUpon>CancelOrder.aspx</DependentUpon>
