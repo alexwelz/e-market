@@ -65,10 +65,11 @@
               </a>
                </li>
                <li class="nav-item">
-                    <a href="User.aspx" class="nav-link"><p style="font-size: 160%;  color:white;"><i class="bi bi-person  bi-3x"></i></p>
+                    <a href="Login.aspx" class="nav-link"><p style="font-size: 160%;  color:white;margin-left:5px;"><i class="bi bi-person  bi-3x"></i></p>
                         <asp:Label Text="" ID="Label2" runat="server" CssClass="position-absolute translate-middle badge rounded-pill bg-secondary" />
                         <span class="visually-hidden">User</span>
                     </a>
+
                 </li>
             </ul>
  
