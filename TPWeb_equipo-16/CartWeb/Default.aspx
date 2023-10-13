@@ -6,36 +6,50 @@
 
 <div class="container"style="height: 90%;width:100%">
   
-<asp:Repeater ID="myRepeater" runat="server" OnItemCommand="myRepeater_ItemCommand">
-    <ItemTemplate>
+
+ <% if ((List<Domain.Item>)Session["filteredItems"] != null)
+     {
+         itemList = (List<Domain.Item>)Session["filteredItems"];
+         Session.Remove("filteredItems");
+     }
+   
+    %>
+
+    <div class="row" style="margin-top: 50px; margin-left: 25px; margin-right:25px; margin-bottom: 50px;">
+
+        <% foreach (Domain.Item item in itemList)
+            { %>
         <div class="col-12 col-md-6 col-lg-4 mb-2">
-            <div class="card" style="border-color: darkgray; height: 100%;">
-                <a href="<%# ResolveUrl("~/Detail.aspx?id=" + Eval("Id")) %>">
-                    <img src="<%# Eval("Images[0]") %>" class="card-img-top" style="object-fit: scale-down; height: 25vh; width: 100%;" alt="...">
+            <div class="card" style="border-color:darkgray; height:100%;">
+                <a href="<%: ResolveUrl("~/Detail.aspx?id=" + item.Id) %>">
+                  
+                    <img src="<%: item.Images[0] %>" class="card-img-top" style="object-fit:scale-down; height: 25vh; width: 100%;"  alt="...">
                 </a>
-                <div class="card-body text-center" style="margin-bottom: 20px;">
+       
+                <div class="card-body text-center" style="margin-bottom:20px;">
                     <center>
-                        <p class="card-text" style="font-size: 16px; color: black;"><strong><%# Eval("Brand.Descripcion") %></strong></p>
-                        <p class="card-title" style="font-size: 15px;"><%# Eval("Name") %></p>
-                        <p class="card-text" style="font-size: 12px;"><%# Eval("Description") %></p>
-                        <p class="card-text" style="font-size: 14px;">$ <%# Eval("Price") %></p>
-                        <div class="btn-group" role="group">
-                            <asp:Button runat="server" Text="Add To Cart" ID="btnAddToCart" CommandName="AddToCart" OnCommand="btnAddToCart_Click" CommandArgument='<%# Eval("ItemCode") %>'
-                                class="btn btn-outline-light" UseSubmitBehavior="false" 
-                                style="background-color: tomato; color: white; font-weight: bold; border-color: dimgray" />
-                            <a href="<%# ResolveUrl("~/Detail.aspx?id=" + Eval("Id")) %>" class="btn btn-outline-secondary" style="font-weight: bold; border-color: dimgray;" title="Detail">+</a>
-                        </div>
+                    
+                    <p class="card-text" style="font-size: 16px; color: black;"><strong><%: item.Brand.Descripcion%></strong></p>
+                    <p class="card-title" style="font-size: 15px;"><%: item.Name  %></p>
+                    <p class="card-text" style="font-size: 12px;"><%: item.Description %></p>
+                    <p class="card-text" style="font-size: 14px;">$ <%: item.Price %></p>
+                    <div class="btn-group" role="group">
+                        
+                        <a href="Default.aspx?Code=<%:item.ItemCode %>" class="btn btn-outline-light" UseSubmitBehavior="false" CommandArgument='<%=item.ItemCode%>'
+                             style="background-color:tomato; color:white; font-weight:bold; border-color:dimgray">Add to cart </a>   
+                        <a href="<%: ResolveUrl("~/Detail.aspx?id=" + item.Id) %>" class="btn btn-outline-secondary" style="font-weight: bold; border-color:dimgrey;" title="Detail">+</a>
+                    </div>
                     </center>
                 </div>
+                   
             </div>
         </div>
-    </ItemTemplate>
-</asp:Repeater>
-      
-    
+        <%
+            } %>
+    </div>
       
 </div>
-   <div style="width:100%; background-color:red; color:yellow;">
+    <div style="width:100%; background-color:red; color:yellow;">
 	<h1>ACULATION</h1>
 	
 	<%if(currentCart == null){%>
@@ -48,8 +62,6 @@
 		
 		<% } %>
 </div>
-
-
   
 </asp:Content>
 
