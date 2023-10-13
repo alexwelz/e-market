@@ -36,6 +36,34 @@ namespace CartWeb
             }
 
         }
+
+        protected void btnDetailAddToCart_Click(object sender, EventArgs e)
+        {
+            int selectedQuantity;
+            ShoppingCart currentCart;
+            currentCart = (ShoppingCart)Session["Cart"];
+
+            if (selectUnit.SelectedIndex > 0)
+            {
+                selectedQuantity = int.Parse(selectUnit.Value);
+            }
+            else
+            {
+                selectedQuantity = 1;
+            }
+
+            for(int i=0; i< selectedQuantity; i++)
+            {
+                currentCart.AddItemToCart(item);
+                currentCart.TotalProducts++;
+            }
+    
+            Session["Cart"] = currentCart;
+            Response.Redirect("~/Detail.aspx?id=" + item.Id);
+           
+
+
+        }
     }
 
 
