@@ -22,22 +22,18 @@ namespace CartWeb
             int itemId = Request.QueryString["id"] != null && int.TryParse(Request.QueryString["id"], out int id) ? id : -1;
             item = itemList.FirstOrDefault(i => i.Id == itemId);
 
-            if(item != null && !IsPostBack)
+            if (item != null && !IsPostBack)
             {
                 lblName.InnerText = item.Name;
                 lblBrand.InnerText = item.Brand.Descripcion;
                 lblDescription.InnerText = item.Description;
                 lblPrice.InnerText = "$" + item.Price.ToString();
             }
-            else
+
+            if (item == null)
             {
                 Response.Redirect("~/Error.aspx");
             }
-
-
-         
-           
-
 
         }
     }

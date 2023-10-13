@@ -28,3 +28,9 @@ C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\Domain\
 C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
 C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\Domain\obj\Debug\Domain.dll
 C:\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\Domain\obj\Debug\Domain.pdb
+C:\0.Archivos Alex\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\Domain\bin\Debug\Domain.dll
+C:\0.Archivos Alex\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\Domain\bin\Debug\Domain.pdb
+C:\0.Archivos Alex\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+C:\0.Archivos Alex\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\0.Archivos Alex\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\Domain\obj\Debug\Domain.dll
+C:\0.Archivos Alex\Github - Repositorios\Programacion_3\CarritoDeCompras\TPWeb_equipo-16\Domain\obj\Debug\Domain.pdb
