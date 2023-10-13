@@ -48,20 +48,7 @@
             } %>
     </div>
       
-</div>
-    <div style="width:100%; background-color:red; color:yellow;">
-	<h1>ACULATION</h1>
-	
-	<%if(currentCart == null){%>
-		<h1>0</h1>
-	<%}
-		else{%>
-		
-			<h1><%:currentCart.itemList.Count().ToString()%></h1>
-		
-		
-		<% } %>
-</div>
+
   
 </asp:Content>
 

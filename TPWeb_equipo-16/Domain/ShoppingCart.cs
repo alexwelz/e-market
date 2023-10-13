@@ -12,11 +12,11 @@ namespace Domain
         public int TotalProducts { get; set; }
 
         public decimal Total { get; set; }
-        public List<ItemList> itemList { get; set; }
+        public List<AuxItem> itemList { get; set; }
 
         public ShoppingCart()
         {
-            itemList = new List<ItemList>();
+            itemList = new List<AuxItem>();
             Total = 0;
             TotalProducts = 0;
 
@@ -25,38 +25,33 @@ namespace Domain
         {
 
             bool exist = false;
-            if (itemList != null)
+
+            for (int i = 0; i < itemList.Count(); i++)
             {
-                for (int i = 0; i < itemList.Count() - 1; i++)
+                if (itemList[i].item.Id == item.Id)
                 {
-                    if (itemList[i].itemCode == item.ItemCode)
-                    {
-                        if (itemList[i].Amount > 1)
-                        {
-                           
-                            itemList[i].AddedItem.Add(item);
-                            itemList[i].Amount++;
-                            exist = true;
-                        }
-
-                    }
+                    itemList[i].Amount++;
+                    Total += itemList[i].Amount * itemList[i].item.Price;
+                    TotalProducts++;                      
+                    exist = true;                 
                 }
-                if (!exist)
-                {
-                    ItemList newList = new ItemList();
-
-
-                    newList.itemCode = item.ItemCode;
-
-                    newList.AddedItem.Add(item);
-                    itemList.Add(newList);
-                }
-
-
-                reloadCartPropertys();
             }
 
+            if (exist==false)
+            {
+                AuxItem aux = new AuxItem();
+                aux.item = item;
+                aux.Amount++;
+                TotalProducts++;
+                Total += item.Price;
+                itemList.Add(aux);
+            }
+                   
+                       
+
         }
+
+        /*
         public void RemoveItemFromCart(Item item)
         {
             for (int i = 0; i < itemList.Count()-1;  i++)
@@ -108,5 +103,7 @@ namespace Domain
 
             return totalPrice;
         }
+
+        */
     }
 }

@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="detail.aspx.cs" Inherits="CartWeb.detail" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">t>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     <div class="container">
         <center>
             <div class="row" style="margin-top: 10%; margin-bottom: 10%">
@@ -68,7 +68,7 @@
                                     
                                 </select>
                             </div>
-                           <%--<a href="#" class="btn btn-primary" onclick="AddItemToCart(<%: item%>); return false;" style="background-color:tomato; color: white; font-weight: bold; border-color:dimgrey;">Add to cart</a>--%>
+              
                         <asp:Button ID="btnDetailAddToCart" runat="server" Text="Add to cart" Onclick="btnDetailAddToCart_Click" CssClass="btn btn-primary" style="background-color:tomato; color: white; font-weight: bold; border-color:dimgrey;" />
 
                       

@@ -40,7 +40,6 @@ namespace CartWeb
 
             item = iManager.newItemByCode(ItemCode);
             currentCart.AddItemToCart(item);
-            currentCart.TotalProducts++;
             Session["Cart"] = currentCart;
         }
 

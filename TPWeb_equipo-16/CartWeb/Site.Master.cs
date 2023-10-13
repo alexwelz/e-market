@@ -32,7 +32,7 @@ namespace CartWeb
 
             }
 
-            Label1.Text = CartShop.itemList.Count().ToString();
+            Label1.Text = CartShop.TotalProducts.ToString();
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
