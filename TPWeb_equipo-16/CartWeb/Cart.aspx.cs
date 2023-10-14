@@ -32,54 +32,114 @@ namespace CartWeb
             }
           
         }
-        public void RemoveItemFromCart(string itemCode)
+        
+        
+        protected void btnDeleteFromCart_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < currentCart.itemList.Count(); i++)
-            {
-                if (currentCart.itemList[i].item.ItemCode == itemCode)
-                {
+            Button btn = (Button)sender;
+            string itemCode = btn.CommandArgument;
+            RemoveItemFromCart(itemCode, true);
+            repeaterItems.DataSource = currentCart.itemList;
+            repeaterItems.DataBind();
+            
+        }
 
-                    currentCart.Total = currentCart.Total -(currentCart.itemList[i].item.Price * currentCart.itemList[i].Amount);
-                    currentCart.TotalProducts = currentCart.TotalProducts - currentCart.itemList[i].Amount;
-                    currentCart.itemList.RemoveAt(i);
-                    Session["Cart"] = currentCart;
-                    repeaterItems.DataSource = currentCart.itemList;
-                    repeaterItems.DataBind();
-                }
-            }
+        protected void btnDash_Click(object sender, EventArgs e)
+        {
+
+            Button btn = (Button)sender;
+            string itemCode = btn.CommandArgument;
+            RemoveItemFromCart(itemCode, false);
+            repeaterItems.DataSource = currentCart.itemList;
+            repeaterItems.DataBind();
+        }
+
+        protected void btnPlus_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            string itemCode = btn.CommandArgument;
+            AddItemToCart(itemCode);
+            repeaterItems.DataSource = currentCart.itemList;
+            repeaterItems.DataBind();
+        }
+
+        private void updateLabelCart()
+        {
             var masterPage = this.Master;
             var lblHeader = masterPage.FindControl("Label1") as Label;
             if (lblHeader != null)
             {
                 lblHeader.Text = currentCart.TotalProducts.ToString();
             }
-            else
+        }
+
+
+        private void AddItemToCart(string itemCode)
+        {
+            for (int i = 0; i < currentCart.itemList.Count(); i++)
             {
-                int zero = 0;
-                lblHeader.Text = zero.ToString(); 
+                if (currentCart.itemList[i].item.ItemCode == itemCode)
+                {
+                    currentCart.Total = currentCart.Total + currentCart.itemList[i].item.Price;
+                    currentCart.TotalProducts = currentCart.TotalProducts + 1;
+                    currentCart.itemList[i].Amount = currentCart.itemList[i].Amount + 1;                 
+                    Session["Cart"] = currentCart;
+                    repeaterItems.DataSource = currentCart.itemList;
+                    repeaterItems.DataBind();
+                    break;
+                }
+            }
+
+            updateLabelCart();
+        }
+
+
+
+        private void RemoveItemFromCart(string itemCode, bool all)
+        {
+
+            for (int i = 0; i < currentCart.itemList.Count(); i++)
+            {
+                if (currentCart.itemList[i].item.ItemCode == itemCode)
+                {
+                    if (all == true)
+                    {
+                        currentCart.Total = currentCart.Total - (currentCart.itemList[i].item.Price * currentCart.itemList[i].Amount);
+                        currentCart.TotalProducts = currentCart.TotalProducts - currentCart.itemList[i].Amount;
+                        currentCart.itemList.RemoveAt(i);
+                        Session["Cart"] = currentCart;
+                        repeaterItems.DataSource = currentCart.itemList;
+                        repeaterItems.DataBind();
+                        break;
+                    }
+                    else
+                    {
+                        currentCart.Total = currentCart.Total - currentCart.itemList[i].item.Price;
+                        currentCart.TotalProducts = currentCart.TotalProducts - 1;
+                        currentCart.itemList[i].Amount = currentCart.itemList[i].Amount - 1;
+                        if (currentCart.itemList[i].Amount == 0)
+                        {
+                            currentCart.itemList.RemoveAt(i);
+                        }
+                        Session["Cart"] = currentCart;
+                        repeaterItems.DataSource = currentCart.itemList;
+                        repeaterItems.DataBind();
+                        break;
+
+                    }
+                }
+            }
+
+
+            updateLabelCart();
+            if (currentCart.TotalProducts == 0)
+            {
+                Response.Redirect("~/EmptyCart.aspx");
             }
 
 
         }
-        public void ModifyItemFromCart(string itemCode)
-        {
-        }
-        protected void btnDeleteFromCart_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            string itemCode = btn.CommandArgument;
-            RemoveItemFromCart(itemCode);
-            repeaterItems.DataSource = currentCart.itemList;
-            repeaterItems.DataBind();
-        }
 
-        protected void btnModify_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            string itemCode = btn.CommandArgument;
-            ModifyItemFromCart(itemCode);
-            repeaterItems.DataSource = currentCart.itemList;
-            repeaterItems.DataBind();
-        }
+
     }
 }
