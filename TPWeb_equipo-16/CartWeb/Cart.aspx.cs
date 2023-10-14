@@ -32,5 +32,39 @@ namespace CartWeb
            
 
         }
+        public void RemoveItemFromCart(string itemCode)
+        {
+            for (int i = 0; i < currentCart.itemList.Count(); i++)
+            {
+                if (currentCart.itemList[i].item.ItemCode == itemCode)
+                {
+                    currentCart.itemList.RemoveAt(i);
+                    Session["Cart"] = currentCart;
+                    repeaterItems.DataSource = currentCart.itemList;
+                    repeaterItems.DataBind();
+                }
+            }
+
+        }
+        public void ModifyItemFromCart(string itemCode)
+        {
+        }
+        protected void btnDeleteFromCart_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            string itemCode = btn.CommandArgument;
+            RemoveItemFromCart(itemCode);
+            repeaterItems.DataSource = currentCart.itemList;
+            repeaterItems.DataBind();
+        }
+
+        protected void btnModify_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            string itemCode = btn.CommandArgument;
+            ModifyItemFromCart(itemCode);
+            repeaterItems.DataSource = currentCart.itemList;
+            repeaterItems.DataBind();
+        }
     }
 }

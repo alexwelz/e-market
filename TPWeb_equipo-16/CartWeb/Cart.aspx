@@ -5,6 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <asp:Repeater ID="repeaterItems" runat="server">
     <ItemTemplate>
+        <div class="row" style="margin-top: 50px; margin-left: 25px; margin-right:25px; margin-bottom: 50px;">
         <div class="col-12 col-md-6 col-lg-4 mb-2">
             <div class="card" style="border-color: darkgray; height: 100%;">
                 <a href="<%# ResolveUrl("~/Detail.aspx?id=" + Eval("item.Id")) %>">
@@ -16,12 +17,19 @@
                         <p class="card-title" style="font-size: 15px;"><%#Eval("item.Name")%></p>
                         <p class="card-text" style="font-size: 12px;"><%#Eval("item.Description")%></p>
                         <p class="card-text" style="font-size: 14px;">$ <%#Eval("item.Price")%></p>
-                        <p class="card-text" style="font-size: 14px;">Amount <%#Eval("Amount")%></p>
-                        
+                        <p class="card-text" style="font-size: 14px;">Amount <%#Eval("Amount")%></p> 
+                        <div>   
+                       <asp:Button ID="btnDeleteFromCart" runat="server" Text="Delete" 
+                        style="background-color: tomato; color: white; font-weight: bold; border-color: dimgray"/>
+                       <asp:Button ID="btnModify" runat="server" Text="Modify" 
+                        style="background-color: tomato; color: white; font-weight: bold; border-color: dimgray"/>
+                        </div>    
                     </center>
+                     
                 </div>
             </div>
         </div>
+      </div>
     </ItemTemplate>
 
  
