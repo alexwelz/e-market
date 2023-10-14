@@ -36,7 +36,7 @@ namespace CartWeb
         
         protected void btnDeleteFromCart_Click(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
+            LinkButton btn = (LinkButton)sender;
             string itemCode = btn.CommandArgument;
             RemoveItemFromCart(itemCode, true);
             repeaterItems.DataSource = currentCart.itemList;
