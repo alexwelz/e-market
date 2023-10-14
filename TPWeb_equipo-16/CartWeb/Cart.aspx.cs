@@ -16,6 +16,7 @@ namespace CartWeb
         public ShoppingCart currentCart { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+
             currentCart = (ShoppingCart)Session["Cart"];
            
 
@@ -29,8 +30,7 @@ namespace CartWeb
                 repeaterItems.DataBind();
 
             }
-           
-
+          
         }
         public void RemoveItemFromCart(string itemCode)
         {
@@ -38,12 +38,27 @@ namespace CartWeb
             {
                 if (currentCart.itemList[i].item.ItemCode == itemCode)
                 {
+
+                    currentCart.Total = currentCart.Total -(currentCart.itemList[i].item.Price * currentCart.itemList[i].Amount);
+                    currentCart.TotalProducts = currentCart.TotalProducts - currentCart.itemList[i].Amount;
                     currentCart.itemList.RemoveAt(i);
                     Session["Cart"] = currentCart;
                     repeaterItems.DataSource = currentCart.itemList;
                     repeaterItems.DataBind();
                 }
             }
+            var masterPage = this.Master;
+            var lblHeader = masterPage.FindControl("Label1") as Label;
+            if (lblHeader != null)
+            {
+                lblHeader.Text = currentCart.TotalProducts.ToString();
+            }
+            else
+            {
+                int zero = 0;
+                lblHeader.Text = zero.ToString(); 
+            }
+
 
         }
         public void ModifyItemFromCart(string itemCode)
