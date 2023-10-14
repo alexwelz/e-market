@@ -99,9 +99,10 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
-    <Content Include="detail.aspx" />
+    <Content Include="Detail.aspx" />
     <Content Include="EmptyCart.aspx" />
     <Content Include="Error.aspx" />
+    <Content Include="FinalizePurchase.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js">
@@ -148,12 +149,12 @@
     <Compile Include="Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
-    <Compile Include="detail.aspx.cs">
-      <DependentUpon>detail.aspx</DependentUpon>
+    <Compile Include="Detail.aspx.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="detail.aspx.designer.cs">
-      <DependentUpon>detail.aspx</DependentUpon>
+    <Compile Include="Detail.aspx.designer.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
     </Compile>
     <Compile Include="EmptyCart.aspx.cs">
       <DependentUpon>EmptyCart.aspx</DependentUpon>
@@ -168,6 +169,13 @@
     </Compile>
     <Compile Include="Error.aspx.designer.cs">
       <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FinalizePurchase.aspx.cs">
+      <DependentUpon>FinalizePurchase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FinalizePurchase.aspx.designer.cs">
+      <DependentUpon>FinalizePurchase.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -54,6 +54,7 @@
         <div style="padding-top:1%; padding-bottom:1%; background-color:tomato; color:white;">
             <h2>Total products amount :<%:currentCart.TotalProducts.ToString() %></h2>
             <h2>Total price of your purchase : $<%:currentCart.Total.ToString() %></h2>
+            <a class="btn btn-warning text-light text-decoration-none"  href="FinalizePurchase.aspx"><strong>Buy</strong></a>
         </div>
     </center>
 </asp:Content>
