@@ -58,7 +58,7 @@
                         </td>
                         <td style="font-weight: bold;">$<%# Eval("SubTotal")  %> </td>
                         <td>
-                            <asp:LinkButton ID="btnDeleteFromCart" runat="server" OnClick="btnDeleteFromCart_Click" CommandArgument='<%# Eval("item.ItemCode") %>' UseSubmitBehavior="false">
+                            <asp:LinkButton ID="btnDeleteFromCart" runat="server" OnClick="btnDeleteFromCart_Click" CommandArgument='<%# Eval("item.ItemCode") %>' UseSubmitBehavior="false" OnClientClick="return confirm('Are you sure you want to delete this Item?');">
                             <i class="bi bi-trash-fill text-danger"></i>
                             </asp:LinkButton>
                         </td>
