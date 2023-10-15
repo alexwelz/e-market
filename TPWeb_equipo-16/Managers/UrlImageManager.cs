@@ -30,7 +30,7 @@ namespace Managers
                     url.IdArticulo = (int)dataManager.Lector["IdArticulo"];
                     if(url.Url == null)
                     {
-                        url.Url = "https://lh3.googleusercontent.com/drive-viewer/AITFw-wS6RAUNTNl47sUUVoPu5qMvbp08NQ48aWAXQUFn-TsDK8497WjmJavnGyi0sS0Uvknmg17fx6wTY7MQYhYDIIRn551=w1366-h618";
+                        url.Url = "https://drive.google.com/file/d/1om8CHtLgtDpcounop4iWNwD7f-jUjV1G/view?usp=sharing";
                     }
                     list.Add(url);
 
