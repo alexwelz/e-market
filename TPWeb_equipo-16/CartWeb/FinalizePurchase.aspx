@@ -54,6 +54,13 @@
                 <div class="input-group">
                     <input type="text" class="form-control" id="purchaseOrder" name="purchaseOrder" readonly>
                 </div>
+            </div>    
+            
+            <div class="mb-3">
+                <label for="txtSummary" class="form-label">Purchase summary</label>
+                <div class="input-group">
+                    <textarea class="form-control" ID="txtSummary" cols="30" rows="10" name="PurchaseSummary" style="resize: none; margin-bottom:20px;" readonly></textarea>
+                </div>
             </div>
 
             <button type="submit" value="Order purchase" class="btn btn-primary" id="liveAlertBtn" style="background-color: green; margin-bottom: 50px;"><strong>Order purchase</strong></button>
@@ -63,7 +70,7 @@
             <input type="hidden" name="_captcha" value="false"></input>
 
 
-            <p style="color:red"><strong>Data Mail: cartproyect@gmail.com Password: TPWeb_equipo-16</strong></p>
+            <p style="color: red"><strong>Data Mail: cartproyect@gmail.com Password: TPWeb_equipo-16</strong></p>
         </div>
 
         <script>
@@ -120,7 +127,7 @@
         </script>
 
         <script>
-     
+
             function randomValue() {
                 var caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
                 var randomValue = '';
@@ -134,5 +141,4 @@
             var purchaseOrderImput = document.getElementById("purchaseOrder");
             purchaseOrderImput.value = randomValue();
         </script>
-
 </asp:Content>
