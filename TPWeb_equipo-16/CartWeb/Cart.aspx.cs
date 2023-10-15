@@ -142,7 +142,8 @@ namespace CartWeb
 
         protected void orderFinalizePurchase_Click(object sender, EventArgs e)
         {
-        
+            Session["Cart"] = currentCart;
+
         }
     }
 }

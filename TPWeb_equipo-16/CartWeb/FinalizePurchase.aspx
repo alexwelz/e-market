@@ -59,7 +59,9 @@
             <div class="mb-3">
                 <label for="txtSummary" class="form-label">Purchase summary</label>
                 <div class="input-group">
-                    <textarea class="form-control" ID="txtSummary" cols="30" rows="10" name="PurchaseSummary" style="resize: none; margin-bottom:20px;" readonly></textarea>
+                      <textarea class="form-control" ID="txtSummary" cols="30" rows="10" name="PurchaseSummary" style="resize: none; margin-bottom:20px;" readonly>
+    <% Response.Write(descriptionTextBlock()); %>
+</textarea>   
                 </div>
             </div>
 
