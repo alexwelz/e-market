@@ -82,8 +82,7 @@ namespace CartWeb
                 {
                     currentCart.Total = currentCart.Total + currentCart.itemList[i].item.Price;
                     currentCart.TotalProducts = currentCart.TotalProducts + 1;
-                    currentCart.itemList[i].Amount = currentCart.itemList[i].Amount + 1;
-                    currentCart.itemList[i].SubTotal = currentCart.itemList[i].Amount * currentCart.itemList[i].item.Price;
+                    currentCart.itemList[i].Amount = currentCart.itemList[i].Amount + 1;                 
                     Session["Cart"] = currentCart;
                     repeaterItems.DataSource = currentCart.itemList;
                     repeaterItems.DataBind();
@@ -118,7 +117,6 @@ namespace CartWeb
                         currentCart.Total = currentCart.Total - currentCart.itemList[i].item.Price;
                         currentCart.TotalProducts = currentCart.TotalProducts - 1;
                         currentCart.itemList[i].Amount = currentCart.itemList[i].Amount - 1;
-                        currentCart.itemList[i].SubTotal = currentCart.itemList[i].item.Price * currentCart.itemList[i].Amount;
                         if (currentCart.itemList[i].Amount == 0)
                         {
                             currentCart.itemList.RemoveAt(i);
