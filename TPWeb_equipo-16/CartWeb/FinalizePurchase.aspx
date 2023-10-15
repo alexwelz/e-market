@@ -72,62 +72,7 @@
             <input type="hidden" name="_next" value="https://localhost:44394/Default.aspx"></input>
             <input type="hidden" name="_captcha" value="false"></input>
 
-
-            <p style="color: red"><strong>Data Mail: cartproyect@gmail.com Password: TPWeb_equipo-16</strong></p>
         </div>
-
-        <script>
-
-            /*====================== alter Email ===========================*/
-            const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
-
-            const appendAlert = (message, type) => {
-                const alertDiv = document.createElement('div');
-                alertDiv.classList.add('alert', `alert-${type}`, 'alert-dismissible', 'fade', 'show');
-                alertDiv.innerHTML = `
-    <div>${message}</div>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  `;
-
-                alertPlaceholder.appendChild(alertDiv);
-
-                setTimeout(() => {
-                    alertDiv.classList.remove('show');
-                    setTimeout(() => {
-                        alertDiv.remove();
-                    }, 1000);
-                }, 5000);
-            };
-
-            const alertTrigger = document.getElementById('liveAlertBtn');
-
-            if (alertTrigger) {
-                alertTrigger.addEventListener('click', () => {
-                    const nameInput = document.querySelector('input[name="name"]');
-                    const lastNameImput = document.querySelector('input[name="lastName"]');
-                    const typeDocumentSelect = document.querySelector('select[name="typeDocument"]');
-                    const numberImput = document.querySelector('input[name="number"]');
-                    const emailInput = document.querySelector('input[name="Email"]');
-
-
-                    if (nameInput.value === '') {
-                        appendAlert('Please enter your name.', 'danger');
-                    } else if (lastNameImput.value === '') {
-                        appendAlert('Please enter your last name.', 'danger');
-                    } else if (typeDocumentSelect.value === '-1') {
-                        appendAlert('Please enter your select option', 'danger');
-                    } else if (numberImput.value === '') {
-                        appendAlert('Please enter your document number.', 'danger');
-                    } else if (emailInput.value === '') {
-                        appendAlert('Please enter your email address. Example: example@gmail.com', 'danger');
-                    } else {
-                        appendAlert('The order has been successfully shipped!', 'success');
-                    }
-                });
-            }
-
-
-        </script>
 
         <script>
 

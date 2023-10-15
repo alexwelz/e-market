@@ -73,7 +73,7 @@
                         </div>
 
                         <asp:Button ID="btnDetailAddToCart" runat="server" Text="Add to cart" OnClick="btnDetailAddToCart_Click" CssClass="btn btn-primary" Style="background-color: tomato; color: white; font-weight: bold; border-color: dimgrey;" />
-
+                        <a class="btn btn-secondary text-light text-decoration-none" href="Default.aspx" style="margin-bottom: 2px;"><strong>Back</strong></a>
 
                     </div>
                 </div>

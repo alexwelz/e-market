@@ -82,8 +82,6 @@
             <input type="hidden" name="_next" value="https://localhost:44394/Default.aspx"></input>
             <input type="hidden" name="_captcha" value="false"></input>
 
-            <p style="color:red"><strong>Data Mail: cartproyect@gmail.com Password: TPWeb_equipo-16</strong></p>
-
         </div>
 
     <script>
