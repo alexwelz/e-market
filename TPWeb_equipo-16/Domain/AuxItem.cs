@@ -13,11 +13,15 @@ namespace Domain
                                                 
         public int Amount { get; set; } 
 
+        public decimal SubTotal { get; set; }
+
 
         public AuxItem()
         {
            
             Amount = 0;
+            SubTotal = 0;
+
           
         }
 
