@@ -30,6 +30,7 @@ namespace Domain
                 if (itemList[i].item.Id == item.Id)
                 {
                     itemList[i].Amount++;
+                    itemList[i].SubTotal = itemList[i].item.Price * itemList[i].Amount;
                     exist = true;
                 }
             }
@@ -39,6 +40,7 @@ namespace Domain
                 AuxItem aux = new AuxItem();
                 aux.item = item;
                 aux.Amount++;
+                aux.SubTotal = item.Price;
                 itemList.Add(aux);
             }
 
@@ -47,4 +49,6 @@ namespace Domain
         }
 
     }
+
+
 }
