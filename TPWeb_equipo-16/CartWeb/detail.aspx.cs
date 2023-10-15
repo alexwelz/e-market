@@ -18,6 +18,7 @@ namespace CartWeb
         {
             ItemManager iManager = new ItemManager();
             itemList = iManager.spListar();
+            //itemList = iManager.Listacompleta();
 
             int itemId = Request.QueryString["id"] != null && int.TryParse(Request.QueryString["id"], out int id) ? id : -1;
             item = itemList.FirstOrDefault(i => i.Id == itemId);

@@ -47,7 +47,9 @@ namespace Managers
 
                     article.Price = (decimal)dataManager.Lector["Precio"];
                     article.Price = Math.Round(article.Price, 2);
-                    article.Images= uManager.imagesOfItems(article.Id);
+                    article.Images = uManager.imagesOfItems(article.Id);
+                
+
                     
 
                     articles.Add(article);
@@ -109,8 +111,13 @@ namespace Managers
                     article.Price = (decimal)dataManager.Lector["Precio"];
                     article.Price = Math.Round(article.Price, 2);
                     article.Images = uManager.imagesOfItems(article.Id);
-
-
+                    if (article.Images == null || article.Images.Count == 0)
+                    {
+                        UrlImage aux = new UrlImage();
+                        aux.Url = "https://tinyurl.com/mr2scwy8";
+                        article.Images = new List<UrlImage>();
+                        article.Images.Add(aux);
+                    }
                     articles.Add(article);
                 }
 
