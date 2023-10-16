@@ -54,5 +54,27 @@ namespace CartWeb
 
 
         }
+        public string getCurrentUserLoged()
+        {
+            string user;
+            if ((string)Session["UserName"] != null)
+            {
+                if ((string)Session["UserName"] == "Maxi" && (string)Session["Password"] == "Programa")
+                {
+                    user = (string)Session["UserName"];
+                    return user;
+                }
+                else
+                {
+                    user = " ";
+                    return user;
+                }
+            }
+            else
+            {
+                user = " ";
+                return user;
+            }
+        }
     }
 }

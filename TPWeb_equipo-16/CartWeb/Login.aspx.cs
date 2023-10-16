@@ -13,7 +13,30 @@ namespace CartWeb
         {
 
         }
+        protected void liveAlertBtn_Click(object sender, EventArgs e)
+        {
+            string userName = theUser.Text;
+            string password = thePassword.Text;
+            Session["UserName"] = userName;
+            Session["Password"] = password;
+            var masterPage = this.Master;
+            var lblHeader = (Label)masterPage.FindControl("currentUser");
+            lblHeader.Text = (string)Session["UserName"];
+            
+                Response.Redirect("Login.aspx");
+            
+        }
+        protected void btnRedirect_Click(object sender, EventArgs e)
+        {
 
-       
+            Response.Redirect("Default.aspx");
+        }
+        protected void retryLogtBtn_Click(object sender, EventArgs e)
+        {
+            Session.Remove("UserName");
+            Session.Remove("Password");
+        }
+        
+
     }
 }

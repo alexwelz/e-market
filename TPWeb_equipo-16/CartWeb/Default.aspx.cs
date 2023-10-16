@@ -38,6 +38,11 @@ namespace CartWeb
             {
                 addItem();
             }
+            if ((string)Session["UserName"] != "Maxi" || (string)Session["Password"] != "Programa")
+            {
+                Session.Remove("UserName");
+                Session.Remove("Password");
+            }
 
         }
 
@@ -81,10 +86,11 @@ namespace CartWeb
                             image.Url = "https://tinyurl.com/3pp9399j";
                         }
                     }
-                    catch (WebException ex)
+                    catch (WebException )
                     {
 
                         image.Url = "https://tinyurl.com/3pp9399j";
+                      
                     }
 
                 }

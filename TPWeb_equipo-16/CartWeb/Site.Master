@@ -56,10 +56,14 @@
           <asp:TextBox runat="server" ID="tbFilter" class="form-control me-2" placeholder="Search by name, brand and category..." aria-label="search" style="width: 700px;"
                onkeydown="if (event.keyCode == 13) document.getElementById('<%= btnBuscar.ClientID %>').click();"></asp:TextBox>
           <asp:Button runat="server" Text="Search" ID="Button1"   OnClick="btnBuscar_Click"  class="btn btn-outline-light" UseSubmitBehavior="false"></asp:Button>
-   
+  
       </form>
          </div>
+        <div> 
+             <asp:Label ID="currentUser" runat="server" style="color:cadetblue" ><%Response.Write( getCurrentUserLoged());  %></asp:Label>  
+        </div>
             <ul class="navbar-nav">
+               
                  <li class="nav-item position-relative">
               <a href="Cart.aspx" class="nav-link">
                <p style="font-size: 160%; color:white;"><i class="bi bi-cart4"></i></p>
@@ -79,7 +83,7 @@
     </div>
   </div>
 </nav>
-            
+          
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
