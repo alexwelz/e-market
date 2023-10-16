@@ -22,26 +22,37 @@ namespace CartWeb
 
             int itemId = Request.QueryString["id"] != null && int.TryParse(Request.QueryString["id"], out int id) ? id : -1;
             item = itemList.FirstOrDefault(i => i.Id == itemId);
-
-            if (item != null && !IsPostBack)
+            try
             {
-                lblName.InnerText = item.Name;
-                lblBrand.InnerText = item.Brand.Descripcion;
-                lblDescription.InnerText = item.Description;
-                lblPrice.InnerText = "$" + item.Price.ToString();
-            }
+                
+                if (item != null && !IsPostBack)
+                {
+                    lblName.InnerText = item.Name;
+                    lblBrand.InnerText = item.Brand.Descripcion;
+                    lblDescription.InnerText = item.Description;
+                    lblPrice.InnerText = "$" + item.Price.ToString();
+                }
 
-            if (item == null)
+                if (item == null)
+                {
+                    Response.Redirect("~/Error.aspx");
+                }
+
+            }
+            catch (Exception ex)
             {
                 Response.Redirect("~/Error.aspx");
+                throw ex ;
             }
+            
 
         }
 
         protected void btnDetailAddToCart_Click(object sender, EventArgs e)
         {
-           
-            
+
+            try
+            {
                 int selectedQuantity;
                 ShoppingCart currentCart;
                 currentCart = (ShoppingCart)Session["Cart"];
@@ -63,7 +74,14 @@ namespace CartWeb
 
                 Session["Cart"] = currentCart;
                 Response.Redirect("~/Detail.aspx?id=" + item.Id);
-            
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex ;
+            }
+                
            
 
 

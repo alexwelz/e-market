@@ -35,13 +35,22 @@ namespace CartWeb
         private void addItem()
         {
 
-            ItemManager iManager = new ItemManager();
-            itemList = iManager.spListar();
-            Item item;
-            string ItemCode = Request.QueryString["Code"];
-            item = iManager.newItemByCode(ItemCode);
-            currentCart.AddItemToCart(item);
-            Session["Cart"] = currentCart;
+            try
+            {
+                ItemManager iManager = new ItemManager();
+                itemList = iManager.spListar();
+                Item item;
+                string ItemCode = Request.QueryString["Code"];
+                item = iManager.newItemByCode(ItemCode);
+                currentCart.AddItemToCart(item);
+                Session["Cart"] = currentCart;
+            }
+            catch (Exception ex)
+            {
+                 Response.Redirect("~/Error.aspx");
+                throw ex;
+            }
+           
         }
 
         public List<Item> urlValidation(List<Item> aux)

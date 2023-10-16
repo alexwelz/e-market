@@ -19,12 +19,14 @@ namespace CartWeb
         }
         public string descriptionTextBlock()
         {
-            ShoppingCart current = (ShoppingCart)Session["Cart"];
-            List<List<string>> orderDescription = new List<List<string>>();
-
-            foreach (var cartItem in current.itemList)
+            try
             {
-                var itemDescription = new List<string>
+                ShoppingCart current = (ShoppingCart)Session["Cart"];
+                List<List<string>> orderDescription = new List<List<string>>();
+
+                foreach (var cartItem in current.itemList)
+                {
+                    var itemDescription = new List<string>
         {
             cartItem.item.Name,
             cartItem.item.Brand.Descripcion,
@@ -32,23 +34,31 @@ namespace CartWeb
             "Unit price : $" + cartItem.item.Price.ToString(),
             "Price per quantity :$" + (cartItem.item.Price * cartItem.Amount).ToString()
         };
-                orderDescription.Add(itemDescription);
-            }
-
-            string formattedText = string.Empty;
-
-            foreach (List<string> innerList in orderDescription)
-            {
-                formattedText += "Product :\r\n";
-                foreach (string item in innerList)
-                {
-                    formattedText += "\t" + item + "\r\n";
+                    orderDescription.Add(itemDescription);
                 }
-                formattedText += "\r\n";
-            }
 
-            formattedText += "Total : $" + current.Total.ToString();
-            return formattedText;
+                string formattedText = string.Empty;
+
+                foreach (List<string> innerList in orderDescription)
+                {
+                    formattedText += "Product :\r\n";
+                    foreach (string item in innerList)
+                    {
+                        formattedText += "\t" + item + "\r\n";
+                    }
+                    formattedText += "\r\n";
+                }
+
+                formattedText += "Total : $" + current.Total.ToString();
+                return formattedText;
+
+            }
+            catch (Exception ex)
+            {
+                Response.Redirect("~/Error.aspx");
+                throw ex;
+            }
+            
         }
     }
 }
