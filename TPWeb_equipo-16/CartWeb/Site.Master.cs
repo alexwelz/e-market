@@ -41,9 +41,8 @@ namespace CartWeb
         }
 
         protected void search(string text)
-        {
-            ItemManager iManager = new ItemManager();
-            List<Item> aux = iManager.spListar();
+        {           
+            List<Item> aux = (List<Item>)Session["ItemList"];
             filterList = aux.FindAll(x => x.Name.ToUpper().Contains(text.ToUpper()) ||
             x.Brand.Descripcion.ToUpper().Contains(text.ToUpper()) ||
             x.Category.Descripcion.ToUpper().Contains(text.ToUpper()));

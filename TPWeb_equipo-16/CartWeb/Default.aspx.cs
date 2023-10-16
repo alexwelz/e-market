@@ -17,10 +17,7 @@ namespace CartWeb
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-
-            if (!IsPostBack)
-            {
+       
                 if (Session["ItemList"] == null)
                 {
                     ItemManager iManager = new ItemManager();
@@ -33,7 +30,7 @@ namespace CartWeb
 
                     itemList = (List<Item>)Session["ItemList"];
                 }
-            }
+           
 
             currentCart = (ShoppingCart)Session["Cart"];
 
