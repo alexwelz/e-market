@@ -18,10 +18,22 @@ namespace CartWeb
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            ItemManager iManager = new ItemManager();
-            itemList = iManager.spListar();
-            //itemList = iManager.Listacompleta();
-            itemList = urlValidation(itemList);
+
+            if (!IsPostBack)
+            {
+                if (Session["ItemList"] == null)
+                {
+                    ItemManager iManager = new ItemManager();
+                    itemList = iManager.Listacompleta();
+                    itemList = urlValidation(itemList);
+                    Session["ItemList"] = itemList;
+                }
+                else
+                {
+
+                    itemList = (List<Item>)Session["ItemList"];
+                }
+            }
 
             currentCart = (ShoppingCart)Session["Cart"];
 
@@ -32,18 +44,19 @@ namespace CartWeb
 
         }
 
+
         private void addItem()
         {
 
             try
             {
-                ItemManager iManager = new ItemManager();
-                itemList = iManager.spListar();
+                CartManager cManager = new CartManager();
+                itemList = (List<Item>)Session["ItemList"];
                 Item item;
                 string ItemCode = Request.QueryString["Code"];
-                item = iManager.newItemByCode(ItemCode);
-                currentCart.AddItemToCart(item);
-                Session["Cart"] = currentCart;
+                item = cManager.findItem(ItemCode,itemList);
+                Session["Cart"] = cManager.AddItemToCart(item,currentCart,1);
+               
             }
             catch (Exception ex)
             {

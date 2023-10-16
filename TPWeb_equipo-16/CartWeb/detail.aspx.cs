@@ -16,10 +16,7 @@ namespace CartWeb
         public Item item { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            ItemManager iManager = new ItemManager();
-            itemList = iManager.spListar();
-            //itemList = iManager.Listacompleta();
-
+            itemList = (List<Item>)Session["ItemList"];
             int itemId = Request.QueryString["id"] != null && int.TryParse(Request.QueryString["id"], out int id) ? id : -1;
             item = itemList.FirstOrDefault(i => i.Id == itemId);
             try
@@ -50,14 +47,14 @@ namespace CartWeb
 
         protected void btnDetailAddToCart_Click(object sender, EventArgs e)
         {
+            int selectedQuantity;
+            ShoppingCart currentCart;
+            currentCart = (ShoppingCart)Session["Cart"];
+            CartManager cManager = new CartManager();
 
             try
             {
-                int selectedQuantity;
-                ShoppingCart currentCart;
-                currentCart = (ShoppingCart)Session["Cart"];
-
-
+              
                 if (selectUnit.SelectedIndex > 0)
                 {
                     selectedQuantity = int.Parse(selectUnit.Value);
@@ -66,14 +63,10 @@ namespace CartWeb
                 {
                     selectedQuantity = 1;
                 }
-
-                for (int i = 0; i < selectedQuantity; i++)
-                {
-                    currentCart.AddItemToCart(item);
-                }
-
-                Session["Cart"] = currentCart;
-                Response.Redirect("~/Detail.aspx?id=" + item.Id);
+         
+                 currentCart = cManager.AddItemToCart(item, currentCart, selectedQuantity);                   
+                 Session["Cart"] = currentCart;
+                 Response.Redirect("~/Detail.aspx?id=" + item.Id);
 
             }
             catch (Exception ex)

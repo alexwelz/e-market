@@ -23,9 +23,13 @@
                 <div class="card" style="border-color: darkgray; height: 100%;">
                     <a href="<%: ResolveUrl("~/Detail.aspx?id=" + item.Id) %>">
 
-                        <% if (item.Images != null && item.Images.Count > 0)
+                       <% if (item.Images != null && item.Images.Count > 0)
                             { %>
-                        <img src="<%: item.Images[0].Url %>" class="card-img-top" style="object-fit: scale-down; height: 25vh; width: 100%;" alt="...">
+                        <img src="<%: item.Images[0] %>" class="card-img-top" style="object-fit: scale-down; height: 25vh; width: 100%;" alt="...">
+                        <% }
+                        else
+                        { %>
+                        <img src="https://tinyurl.com/mr2scwy8" class="card-img-top" style="object-fit: scale-down; height: 25vh; width: 100%;" alt="...">
                         <% } %>
                     </a>
 

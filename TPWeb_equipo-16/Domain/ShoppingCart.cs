@@ -21,6 +21,8 @@ namespace Domain
             TotalProducts = 0;
 
         }
+
+
         public void AddItemToCart(Item item)
         {
             bool exist = false;

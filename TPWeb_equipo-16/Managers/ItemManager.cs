@@ -21,13 +21,16 @@ namespace Managers
             {
                 DataManager dataManager = new DataManager();
                 UrlImageManager uManager = new UrlImageManager();
-     
+
 
                 dataManager.setQuery(query);
                 dataManager.executeRead();
                 while (dataManager.Lector.Read())
                 {
                     Item article = new Item();
+                    UrlImage aux = new UrlImage();
+                    article.Images = new List<UrlImage>();
+
                     article.Id = (int)dataManager.Lector["Id"];
                     article.Name = (string)dataManager.Lector["Nombre"];
                     article.Description = (string)dataManager.Lector["Descripcion"];
@@ -48,9 +51,14 @@ namespace Managers
                     article.Price = (decimal)dataManager.Lector["Precio"];
                     article.Price = Math.Round(article.Price, 2);
                     article.Images = uManager.imagesOfItems(article.Id);
-                
+                    if (article.Images.Count == 0)
+                    {
+                        aux.Url = "https://tinyurl.com/mr2scwy8";
+                        article.Images.Add(aux);
+                    }
 
-                    
+
+
 
                     articles.Add(article);
                 }
@@ -73,8 +81,8 @@ namespace Managers
         }
         public List<Item> Listacompleta()
         {
-            return  uploadArticlesList("select A.Id As Id, A.Codigo As Codigo,A.Nombre As Nombre ,A.Descripcion As Descripcion ,M.Descripcion Marca,C.Descripcion As Categoria, C.Id As IdCategoria, M.Id As IdMarca ,A.Precio  As Precio FROM  ARTICULOS A left JOIN  MARCAS M on M.Id= A.IdMarca left JOIN CATEGORIAS C on C.Id= A.IdCategoria");
-         
+            return uploadArticlesList("select A.Id As Id, A.Codigo As Codigo,A.Nombre As Nombre ,A.Descripcion As Descripcion ,M.Descripcion Marca,C.Descripcion As Categoria, C.Id As IdCategoria, M.Id As IdMarca ,A.Precio  As Precio FROM  ARTICULOS A left JOIN  MARCAS M on M.Id= A.IdMarca left JOIN CATEGORIAS C on C.Id= A.IdCategoria");
+
         }
 
         public List<Item> spListar()
@@ -86,11 +94,15 @@ namespace Managers
                 UrlImageManager uManager = new UrlImageManager();
 
 
+
                 dataManager.setProcedure("storedList");
                 dataManager.executeRead();
                 while (dataManager.Lector.Read())
                 {
                     Item article = new Item();
+                    UrlImage aux = new UrlImage();
+                    article.Images = new List<UrlImage>();
+
                     article.Id = (int)dataManager.Lector["Id"];
                     article.Name = (string)dataManager.Lector["Nombre"];
                     article.Description = (string)dataManager.Lector["Descripcion"];
@@ -110,12 +122,9 @@ namespace Managers
 
                     article.Price = (decimal)dataManager.Lector["Precio"];
                     article.Price = Math.Round(article.Price, 2);
-                    article.Images = uManager.imagesOfItems(article.Id);
-                    if (article.Images == null || article.Images.Count == 0)
+                    if (article.Images.Count == 0)
                     {
-                        UrlImage aux = new UrlImage();
                         aux.Url = "https://tinyurl.com/mr2scwy8";
-                        article.Images = new List<UrlImage>();
                         article.Images.Add(aux);
                     }
                     articles.Add(article);
@@ -230,7 +239,7 @@ namespace Managers
         {
             DataManager dataManager = new DataManager();
             UrlImageManager imageManager = new UrlImageManager();
-            
+
             try
             {
 
@@ -243,7 +252,7 @@ namespace Managers
                 dataManager.setParameter("@idCategoria", item.Category.Id);
                 dataManager.setParameter("@id", item.Id);
                 dataManager.executeRead();
-          
+
             }
             catch (Exception)
             {
@@ -381,20 +390,6 @@ namespace Managers
                 throw ex;
             }
         }
-        public Item newItemByCode(string itemCode)
-        {
-            Item item = new Item();
-            List <Item> AllItemsofDB  = new List<Item>();
-            AllItemsofDB = Listacompleta();
-            foreach (Item current in AllItemsofDB)
-            {
-                if(current.ItemCode == itemCode)
-                {
-                    item = current;
-                    break;
-                }
-            }
-            return item;
-        }
+
     }
 }
