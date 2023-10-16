@@ -76,68 +76,80 @@ namespace CartWeb
 
         private void AddItemToCart(string itemCode)
         {
-            for (int i = 0; i < currentCart.itemList.Count(); i++)
+            try
             {
-                if (currentCart.itemList[i].item.ItemCode == itemCode)
+                for (int i = 0; i < currentCart.itemList.Count(); i++)
                 {
-                    currentCart.Total = currentCart.Total + currentCart.itemList[i].item.Price;
-                    currentCart.TotalProducts = currentCart.TotalProducts + 1;
-                    currentCart.itemList[i].Amount = currentCart.itemList[i].Amount + 1;
-                    currentCart.itemList[i].SubTotal = currentCart.itemList[i].Amount * currentCart.itemList[i].item.Price;
-                    Session["Cart"] = currentCart;
-                    repeaterItems.DataSource = currentCart.itemList;
-                    repeaterItems.DataBind();
-                    break;
+                    if (currentCart.itemList[i].item.ItemCode == itemCode)
+                    {
+                        currentCart.Total = currentCart.Total + currentCart.itemList[i].item.Price;
+                        currentCart.TotalProducts = currentCart.TotalProducts + 1;
+                        currentCart.itemList[i].Amount = currentCart.itemList[i].Amount + 1;
+                        currentCart.itemList[i].SubTotal = currentCart.itemList[i].Amount * currentCart.itemList[i].item.Price;
+                        Session["Cart"] = currentCart;
+                        repeaterItems.DataSource = currentCart.itemList;
+                        repeaterItems.DataBind();
+                        break;
+                    }
                 }
-            }
 
-            updateLabelCart();
+                updateLabelCart();
+            }
+            catch (Exception ex)
+            {
+                Response.Redirect("~/Error.aspx");
+                throw ex;
+            }
+            
+
         }
 
 
 
         private void RemoveItemFromCart(string itemCode, bool all)
         {
-
-            for (int i = 0; i < currentCart.itemList.Count(); i++)
-            {
-                if (currentCart.itemList[i].item.ItemCode == itemCode)
+            
+                for (int i = 0; i < currentCart.itemList.Count(); i++)
                 {
-                    if (all == true)
+                    if (currentCart.itemList[i].item.ItemCode == itemCode)
                     {
-                        currentCart.Total = currentCart.Total - (currentCart.itemList[i].item.Price * currentCart.itemList[i].Amount);
-                        currentCart.TotalProducts = currentCart.TotalProducts - currentCart.itemList[i].Amount;
-                        currentCart.itemList.RemoveAt(i);
-                        Session["Cart"] = currentCart;
-                        repeaterItems.DataSource = currentCart.itemList;
-                        repeaterItems.DataBind();
-                        break;
-                    }
-                    else
-                    {
-                        currentCart.Total = currentCart.Total - currentCart.itemList[i].item.Price;
-                        currentCart.TotalProducts = currentCart.TotalProducts - 1;
-                        currentCart.itemList[i].Amount = currentCart.itemList[i].Amount - 1;
-                        currentCart.itemList[i].SubTotal = currentCart.itemList[i].item.Price * currentCart.itemList[i].Amount;
-                        if (currentCart.itemList[i].Amount == 0)
+                        if (all == true)
                         {
+                            currentCart.Total = currentCart.Total - (currentCart.itemList[i].item.Price * currentCart.itemList[i].Amount);
+                            currentCart.TotalProducts = currentCart.TotalProducts - currentCart.itemList[i].Amount;
                             currentCart.itemList.RemoveAt(i);
+                            Session["Cart"] = currentCart;
+                            repeaterItems.DataSource = currentCart.itemList;
+                            repeaterItems.DataBind();
+                            break;
                         }
-                        Session["Cart"] = currentCart;
-                        repeaterItems.DataSource = currentCart.itemList;
-                        repeaterItems.DataBind();
-                        break;
+                        else
+                        {
+                            currentCart.Total = currentCart.Total - currentCart.itemList[i].item.Price;
+                            currentCart.TotalProducts = currentCart.TotalProducts - 1;
+                            currentCart.itemList[i].Amount = currentCart.itemList[i].Amount - 1;
+                            currentCart.itemList[i].SubTotal = currentCart.itemList[i].item.Price * currentCart.itemList[i].Amount;
+                            if (currentCart.itemList[i].Amount == 0)
+                            {
+                                currentCart.itemList.RemoveAt(i);
+                            }
+                            Session["Cart"] = currentCart;
+                            repeaterItems.DataSource = currentCart.itemList;
+                            repeaterItems.DataBind();
+                            break;
 
+                        }
                     }
                 }
-            }
 
 
-            updateLabelCart();
-            if (currentCart.TotalProducts == 0)
-            {
-                Response.Redirect("~/EmptyCart.aspx");
-            }
+                updateLabelCart();
+                if (currentCart.TotalProducts == 0)
+                {
+                    Response.Redirect("~/EmptyCart.aspx");
+                }
+          
+            
 
 
         }
