@@ -81,25 +81,7 @@
  
     </div>
     
-            <%-- </div>
-            <ul class="navbar-nav">               
-                 <li class="nav-item position-relative">
-              <a href="Cart.aspx" class="nav-link">
-               <p style="font-size: 160%; color:white;"><i class="bi bi-cart4"></i></p>
-                 <asp:Label Text="" ID="Label1" runat="server" CssClass="badge rounded-pill bg-secondary position-absolute start-100 translate-middle" style="top: 15px;" />
-                  <span class="visually-hidden">Items en el carrito</span>
-              </a>
-               </li>
-               <li class="nav-item">
-                    <a href="Login.aspx" class="nav-link"><p style="font-size: 160%;  color:white;margin-left:5px;"><i class="bi bi-person  bi-3x"></i></p>
-                        <asp:Label Text="" ID="Label2" runat="server" CssClass="position-absolute translate-middle badge rounded-pill bg-secondary" />
-                        <span class="visually-hidden">User</span>
-                    </a>
-
-                </li>
-            </ul>
- 
-    </div> --%> 
+           
   </div>
 </nav>
           

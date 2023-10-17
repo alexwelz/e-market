@@ -4,12 +4,6 @@ C:\Users\Daniel\Documents\GitHub\TP2Progra_3\GUI\Domain\obj\Debug\Domain.csproj.
 C:\Users\Daniel\Documents\GitHub\TP2Progra_3\GUI\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
 C:\Users\Daniel\Documents\GitHub\TP2Progra_3\GUI\Domain\obj\Debug\Domain.dll
 C:\Users\Daniel\Documents\GitHub\TP2Progra_3\GUI\Domain\obj\Debug\Domain.pdb
-C:\Users\Daniel\Documents\GitHub\CarritoDeCompras\TPWeb_equipo-16\Domain\bin\Debug\Domain.dll
-C:\Users\Daniel\Documents\GitHub\CarritoDeCompras\TPWeb_equipo-16\Domain\bin\Debug\Domain.pdb
-C:\Users\Daniel\Documents\GitHub\CarritoDeCompras\TPWeb_equipo-16\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
-C:\Users\Daniel\Documents\GitHub\CarritoDeCompras\TPWeb_equipo-16\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
-C:\Users\Daniel\Documents\GitHub\CarritoDeCompras\TPWeb_equipo-16\Domain\obj\Debug\Domain.dll
-C:\Users\Daniel\Documents\GitHub\CarritoDeCompras\TPWeb_equipo-16\Domain\obj\Debug\Domain.pdb
 C:\Archivos Alex\Github - Repositorios\CarritoDeCompras\TPWeb_equipo-16\Domain\bin\Debug\Domain.dll
 C:\Archivos Alex\Github - Repositorios\CarritoDeCompras\TPWeb_equipo-16\Domain\bin\Debug\Domain.pdb
 C:\Archivos Alex\Github - Repositorios\CarritoDeCompras\TPWeb_equipo-16\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
@@ -40,3 +34,9 @@ C:\Github - Repositorios\CarritoDeCompras\TPWeb_equipo-16\Domain\obj\Debug\Domai
 C:\Github - Repositorios\CarritoDeCompras\TPWeb_equipo-16\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
 C:\Github - Repositorios\CarritoDeCompras\TPWeb_equipo-16\Domain\obj\Debug\Domain.dll
 C:\Github - Repositorios\CarritoDeCompras\TPWeb_equipo-16\Domain\obj\Debug\Domain.pdb
+C:\Users\Daniel\Documents\GitHub\CarritoDeCompras\TPWeb_equipo-16\Domain\bin\Debug\Domain.dll
+C:\Users\Daniel\Documents\GitHub\CarritoDeCompras\TPWeb_equipo-16\Domain\bin\Debug\Domain.pdb
+C:\Users\Daniel\Documents\GitHub\CarritoDeCompras\TPWeb_equipo-16\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+C:\Users\Daniel\Documents\GitHub\CarritoDeCompras\TPWeb_equipo-16\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Daniel\Documents\GitHub\CarritoDeCompras\TPWeb_equipo-16\Domain\obj\Debug\Domain.dll
+C:\Users\Daniel\Documents\GitHub\CarritoDeCompras\TPWeb_equipo-16\Domain\obj\Debug\Domain.pdb

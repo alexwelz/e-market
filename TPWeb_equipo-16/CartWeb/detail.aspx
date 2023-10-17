@@ -29,14 +29,37 @@
                                     {
                                         first = false; %>
                             <div class="carousel-item active">
-                                <img src="<%:item.Images[i]%>" class="d-block w-100" style="object-fit: scale-down; height: 50vh; width: 100%;" alt="">
+
+                                <% if (item.Images[0].Url == "FailedLoad")
+                                    { %>
+                                <img src="descarga.png" class="d-block w-100" style="object-fit: scale-down; height: 50vh; width: 100%;" alt="">
+                                <% }
+                                    else if (item.Images[0].Url == "EmptyImage")
+                                    { %>
+                                <img src="emptyImage.jpg" class="d-block w-100" style="object-fit: scale-down; height: 50vh; width: 100%;" alt="">
+                                <% }
+                                    else
+                                    { %>
+                                <img src="<%: item.Images[i] %>" class="d-block w-100" style="object-fit: scale-down; height: 50vh; width: 100%;" alt="">
+                                <% } %>
                             </div>
                             <%}
                                 else
                                 {%>
 
                             <div class="carousel-item ">
-                                <img src="<%:item.Images[i]%>" class="d-block w-100" style="object-fit: scale-down; height: 50vh; width: 100%;" alt="">
+                                <% if (item.Images[0].Url == "FailedLoad")
+                                    { %>
+                                <img src="descarga.png" class="d-block w-100" style="object-fit: scale-down; height: 50vh; width: 100%;" alt="">
+                                <% }
+                                    else if (item.Images[0].Url == "EmptyImage")
+                                    { %>
+                                <img src="emptyImage.jpg" class="d-block w-100" style="object-fit: scale-down; height: 50vh; width: 100%;" alt="">
+                                <% }
+                                    else
+                                    { %>
+                                <img src="<%: item.Images[i] %>" class="d-block w-100" style="object-fit: scale-down; height: 50vh; width: 100%;" alt="">
+                                <% } %>
                             </div>
                             <% }
 

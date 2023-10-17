@@ -23,13 +23,17 @@
                 <div class="card" style="border-color: darkgray; height: 100%;">
                     <a href="<%: ResolveUrl("~/Detail.aspx?id=" + item.Id) %>">
 
-                       <% if (item.Images != null && item.Images.Count > 0)
+                       <% if (item.Images[0].Url == "FailedLoad")
                             { %>
-                        <img src="<%: item.Images[0] %>" class="card-img-top" style="object-fit: scale-down; height: 25vh; width: 100%;" alt="...">
+                        <img src="descarga.png" class="card-img-top" style="object-fit: scale-down; height: 25vh; width: 100%;" alt="Image">
+                        <% }
+                        else if(item.Images[0].Url == "EmptyImage")
+                        { %>
+                        <img src="emptyImage.jpg" class="card-img-top" style="object-fit: scale-down; height: 25vh; width: 100%;" alt="Image">                      
                         <% }
                         else
                         { %>
-                        <img src="https://tinyurl.com/mr2scwy8" class="card-img-top" style="object-fit: scale-down; height: 25vh; width: 100%;" alt="...">
+                        <img src="<%: item.Images[0] %>" class="card-img-top" style="object-fit: scale-down; height: 25vh; width: 100%;" alt="Image">
                         <% } %>
                     </a>
 

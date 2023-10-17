@@ -53,7 +53,7 @@ namespace Managers
                     article.Images = uManager.imagesOfItems(article.Id);
                     if (article.Images.Count == 0)
                     {
-                        aux.Url = "https://tinyurl.com/mr2scwy8";
+                        aux.Url = "EmptyImage";
                         article.Images.Add(aux);
                     }
 

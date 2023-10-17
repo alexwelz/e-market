@@ -15,6 +15,7 @@ namespace CartWeb
         public List<Item> itemList { get; set; }
         public ShoppingCart currentCart { get; set; }
 
+
         protected void Page_Load(object sender, EventArgs e)
         {
        
@@ -75,21 +76,24 @@ namespace CartWeb
                 foreach (UrlImage image in item.Images)
                 {
 
-                    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(image.Url);
-                    request.Method = "HEAD";
+                                 
                     try
                     {
-                        HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-                        if (response.StatusCode != HttpStatusCode.OK)
+                        if (image.Url != "EmptyImage")
                         {
+                            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(image.Url);
+                            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                            if (response.StatusCode != HttpStatusCode.OK)
+                            {
 
-                            image.Url = "https://tinyurl.com/3pp9399j";
+                                image.Url = "FailedLoad";
+                            }
                         }
                     }
                     catch (WebException )
                     {
 
-                        image.Url = "https://tinyurl.com/3pp9399j";
+                        image.Url = "FailedLoad";
                       
                     }
 

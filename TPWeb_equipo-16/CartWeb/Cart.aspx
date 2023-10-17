@@ -34,8 +34,9 @@
             <asp:Repeater ID="repeaterItems" runat="server">
                 <ItemTemplate>
                     <tr>
-                        <td>
-                            <img src='<%# Eval("item.Images[0].Url") %>' class="card-img-top" style="object-fit: scale-down; height: 25vh; width: 50%;" alt="..."></td>
+                        <td> 
+                            <asp:Image ID="imgItem" runat="server" ImageUrl='<%# (Eval("item.Images[0].Url").ToString() == "FailedLoad") ? "descarga.png" : (Eval("item.Images[0].Url").ToString() == "EmptyImage") ? "emptyImage.jpg" : Eval("item.Images[0].Url") %>' CssClass="card-img-top" style="object-fit: scale-down; height: 25vh; width: 50%" alt="Image" />  
+                         </td>
                         <td>
                             <%# Eval("item.Name") %><br />
                            <p style="color:dimgray; font-size:small;"> <%# Eval("item.Brand.Descripcion") %></p>

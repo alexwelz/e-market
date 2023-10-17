@@ -47,7 +47,10 @@ namespace CartWeb
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            search(tbFilter.Text);
+            if (tbFilter.Text != "")
+            {
+                search(tbFilter.Text);
+            }
         }
 
         protected void search(string text)
