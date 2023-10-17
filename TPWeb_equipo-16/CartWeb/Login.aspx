@@ -25,45 +25,7 @@
     </div>
     <asp:Button Text="Log in" runat="server" OnClick="liveAlertBtn_Click" CssClass="btn btn-primary" ID="liveAlertBtn" style="background-color: green; margin-bottom: 50px; margin-top: 20px" />
     <a class="btn btn-secondary text-light text-decoration-none" href="Default.aspx" style="margin-bottom: 50px; margin-top: 20px"><strong>Back</strong></a>
-    <div id="liveAlertPlaceholder"></div>
 
-        <script>
-            const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
-
-            const appendAlert = (message, type) => {
-                const alertDiv = document.createElement('div');
-                alertDiv.classList.add('alert', `alert-${type}`, 'alert-dismissible', 'fade', 'show');
-                alertDiv.innerHTML = `
-    <div>${message}</div>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  `;
-
-                alertPlaceholder.appendChild(alertDiv);
-
-                setTimeout(() => {
-                    alertDiv.classList.remove('show');
-                    setTimeout(() => {
-                        alertDiv.remove();
-                    }, 1000);
-                }, 5000);
-            };
-
-            const alertTrigger = document.getElementById('liveAlertBtn');
-
-            if (alertTrigger) {
-                alertTrigger.addEventListener('click', () => {
-                    const userInput = document.querySelector('input[name="user"]');
-                    const passwordImput = document.querySelector('input[name="password"]');
-
-                    if (userInput.value === '') {
-                        appendAlert('Please enter your user name.', 'danger');
-                    } else if (passwordImput.value === '') {
-                        appendAlert('Please enter your password.', 'danger');
-                    } 
-                });
-            }
-
-        </script>
          <h3 style="color:red;">Username : "Maxi" ,Password : "Programa"</h3>
     </div>
     <%}

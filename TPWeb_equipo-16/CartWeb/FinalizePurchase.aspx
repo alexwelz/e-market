@@ -68,7 +68,6 @@
             <asp:button runat="server" Text="Order purchase" type="submit" value="Order purchase" class="btn btn-primary" id="liveAlertBtn" style="background-color: green; margin-bottom: 50px;" OnClientClick="return confirm('Are you sure you want to confirm the order?');"></asp:button>
 
             <a class="btn btn-secondary text-light text-decoration-none" href="Cart.aspx" style="margin-bottom: 50px;"><strong>Back</strong></a>
-            <div id="liveAlertPlaceholder"></div>
             <input type="hidden" name="_next" value="https://localhost:44394/Default.aspx"></input>
             <input type="hidden" name="_captcha" value="false"></input>
 

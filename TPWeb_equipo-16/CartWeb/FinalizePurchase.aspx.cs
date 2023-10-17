@@ -27,13 +27,13 @@ namespace CartWeb
                 foreach (var cartItem in current.itemList)
                 {
                     var itemDescription = new List<string>
-        {
-            cartItem.item.Name,
-            cartItem.item.Brand.Descripcion,
-            cartItem.Amount.ToString(),
-            "Unit price : $" + cartItem.item.Price.ToString(),
-            "Price per quantity :$" + (cartItem.item.Price * cartItem.Amount).ToString()
-        };
+                    {
+                        cartItem.item.Name,
+                        cartItem.item.Brand.Descripcion,
+                        cartItem.Amount.ToString(),
+                        "Unit price : $" + cartItem.item.Price.ToString(),
+                        "Price per quantity :$" + (cartItem.item.Price * cartItem.Amount).ToString()
+                    };
                     orderDescription.Add(itemDescription);
                 }
 
