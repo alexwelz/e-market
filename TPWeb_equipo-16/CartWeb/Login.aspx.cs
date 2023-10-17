@@ -19,11 +19,7 @@ namespace CartWeb
             string password = thePassword.Text;
             Session["UserName"] = userName;
             Session["Password"] = password;
-            var masterPage = this.Master;
-            var lblHeader = (Label)masterPage.FindControl("currentUser");
-            lblHeader.Text = (string)Session["UserName"];
-            
-                Response.Redirect("Login.aspx");
+            Response.Redirect("Login.aspx");
             
         }
         protected void btnRedirect_Click(object sender, EventArgs e)
@@ -35,6 +31,10 @@ namespace CartWeb
         {
             Session.Remove("UserName");
             Session.Remove("Password");
+            var masterPage = this.Master;
+            var lblHeader = masterPage.FindControl("Label2") as Label;
+            lblHeader.Text = "";
+            
         }
         
 

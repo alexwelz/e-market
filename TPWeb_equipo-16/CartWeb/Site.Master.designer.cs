@@ -60,13 +60,13 @@ namespace CartWeb
         protected global::System.Web.UI.WebControls.Button Button1;
 
         /// <summary>
-        /// Control currentUser.
+        /// Control Label2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label currentUser;
+        protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
         /// Control Label1.
@@ -76,15 +76,6 @@ namespace CartWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
-
-        /// <summary>
-        /// Control Label2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
         /// Control ContentPlaceHolder1.

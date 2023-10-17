@@ -20,6 +20,7 @@ namespace CartWeb
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!IsPostBack && Session["Cart"] == null)
             {
                 CartShop = new ShoppingCart();
@@ -31,6 +32,15 @@ namespace CartWeb
                 CartShop = (ShoppingCart)Session["Cart"];
 
             }
+
+            if ((string)Session["UserName"] != null)
+            {
+                if ((string)Session["UserName"] == "Maxi" && (string)Session["Password"] == "Programa")
+                {
+                    Label2.Text = "Maxi Programa";
+                }
+            }
+              
 
             Label1.Text = CartShop.TotalProducts.ToString();
         }
@@ -54,27 +64,6 @@ namespace CartWeb
 
 
         }
-        public string getCurrentUserLoged()
-        {
-            string user;
-            if ((string)Session["UserName"] != null)
-            {
-                if ((string)Session["UserName"] == "Maxi" && (string)Session["Password"] == "Programa")
-                {
-                    user = (string)Session["UserName"];
-                    return user;
-                }
-                else
-                {
-                    user = " ";
-                    return user;
-                }
-            }
-            else
-            {
-                user = " ";
-                return user;
-            }
-        }
+        
     }
 }
