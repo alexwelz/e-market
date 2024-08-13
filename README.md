@@ -6,13 +6,15 @@
 
 ## Tecnologías Utilizadas
 
-- **Lenguaje**: C#.
+- **Lenguaje**: C# - SQL.
 - **Framework**: ASP.NET.
 - **Estilos**: Bootstrap.
-- **Entorno de Desarrollo**: Visual Studio Community.
+- **Entorno de Desarrollo**: Visual Studio Community - Azure Data Studio.
 
   
 ## ¿Cómo utilizar e-Market?
+
+![e-market](https://i.imgur.com/rYOjwHP.gif)
 
 Para ejecutar este proyecto:
 
@@ -20,13 +22,15 @@ Para ejecutar este proyecto:
    ```bash
    git clone https://github.com/Gjuricich/e-market.git
    
-2. Abrí el proyecto en Visual Studio Community.
+2. Ejecuta el script de la base.
    
-3. Restaura los paquetes NuGet:
+3. Abrí el proyecto en Visual Studio Community.
+   
+4. Restaura los paquetes NuGet:
    ```bash
    Update-Package -Reinstall
    
-4. Ejecuta el proyecto para comenzar.
+5. Ejecuta el proyecto para comenzar.
  
 ## Licencia 
 Code copyright 2023 Guada Juricich - Alejandro Morales - Alex Welz.
